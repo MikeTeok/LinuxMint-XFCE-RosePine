@@ -3,10 +3,10 @@ A rice for my personal LinuxMint XFCE Version
 
 
 Todo-list:
-1. neofetch theme
-2. install fish
-3. install oh my posh
-4. terminal menubar customization
+1. ~~neofetch theme~~
+2. ~~install fish~~
+3. ~~install oh my posh~~
+4. ~~terminal menubar customization~~ (dropped)
 5. wobbly window
 6. install edge
 7. eww bar
