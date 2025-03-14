@@ -1,0 +1,44 @@
+window-frame, .window-frame:backdrop, .xfce4-panel menu  *  { box-shadow: 0 0 0 black; border-style: none; margin: 0px; border-radius: 0; box-shadow: none; }
+
+.popover, .popover.background { box-shadow: none; }
+
+decoration { box-shadow: none; margin: 0px; }
+
+.csd.popup { box-shadow: none; }
+
+tooltip { margin: 0px; border-radius: 0px; box-shadow: none; } 
+
+menu {
+  border: none;
+  background-color: rgba(35, 33, 54, 0);
+  color: rgba(250, 244, 237, 0.7);
+}
+
+/********************
+       Thunar
+*******************/
+
+window{ 
+background-color: rgba(35, 33, 54, 0.6);
+border: none;}
+
+grid, paned *, toolbar, menubar { 
+background-color: rgba(35, 33, 54, 0);
+border: none;}
+
+paned treeview { background-color: rgba(35, 33, 54, 0) }
+paned treeview:selected{ background-color: rgba(250, 244, 237, 0.5) }
+.thunar .view:selected{ background-color: #606070; color: #fff;}
+
+/********************
+      Gedit
+*******************/
+
+window paned {background-color: rgba(35, 33, 54, 0);}
+paned * {background-color: rgba(35, 33, 54, 0);}
+headerbar  {background-color: rgba(35, 33, 54, 0.6);}
+headerbar * {background-color: rgba(35, 33, 54, 0);}
+
+.close.titlebutton {background-color: rgba(235, 111, 146, 0.6);}
+.maximize.titlebutton {background-color: rgba(61, 143, 176, 0.6);}
+.minimize.titlebutton {background-color: rgba(246, 193, 119, 0.6);}
