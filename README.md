@@ -14,4 +14,4 @@ Todo-list:
 9. plank or eww dock
 10. ~~text editor (gedit)~~
 11. tiling manager
-12. Customize Firefox
+12. Customize FirefoxCSS
