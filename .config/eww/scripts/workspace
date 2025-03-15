@@ -9,10 +9,10 @@ print_workspaces() {
     # Loop n times, where n is the number of workspaces
     for ((i=0; i<num_workspaces; i++)); do
         if [ $1 -eq $i ]; then
-            icon=""
+            icon=" "
             class="focused"
         else
-            icon=""
+            icon=" "
             class="empty"
         fi
         buf="$buf (button :class \"$class\" :onclick \"wmctrl -s $i\" \"$icon\")"

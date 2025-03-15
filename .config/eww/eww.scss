@@ -6,7 +6,8 @@
 .bar {
   background-color: #212335;
   color: #b0b4bc;
- padding: 5px 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
 // Styles on classes (see eww.yuck for more information)
@@ -44,5 +45,14 @@
 
 .workspaces button:hover {
   color: #D35D6E;
+}
+
+.workspaces {
+  padding-top: 4px;
+  padding-left: 6px;
+}
+
+.workspaces button{
+
 }
 
