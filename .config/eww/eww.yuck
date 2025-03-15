@@ -47,7 +47,7 @@
     (button :class "label" 
             :onclick click_fn
             label)
-    (revealer :transition "slideright" 
+    (revealer :transition "slideleft" 
               :reveal reveal
     (scale :min 0
            :max 101
