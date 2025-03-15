@@ -30,7 +30,7 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defpoll time :interval "10s"
-  "date '+%H:%M %b %d, %Y'")
+  "date '+%d %b, %I:%M %p'")
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -90,7 +90,7 @@
             :value {EWW_RAM.used_mem_perc}
             :onchange ""
             :reveal true)
-    (metric :label "💾"
+    (metric :label "⏻"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
             :onchange ""
             :reveal true)
