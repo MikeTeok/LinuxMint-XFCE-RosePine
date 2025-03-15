@@ -49,7 +49,7 @@ headerbar * {background-color: rgba(35, 33, 54, 0);}
 .close.titlebutton {background-color: rgba(235, 111, 146, 0.6);}
 .maximize.titlebutton {background-color: rgba(61, 143, 176, 0.6);}
 .minimize.titlebutton {background-color: rgba(246, 193, 119, 0.6);}
-
+text selection {background-color: rgba(86,82,110,0.5)}
 /********************
       terminal
 *******************/
