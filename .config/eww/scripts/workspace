@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Function to print workspaces and loop through them
+print_workspaces() {
+    # Get the number of workspaces in Xfce
+    buf=""
+    num_workspaces=$(xfconf-query -c xfwm4 -p /general/workspace_count)
+
+    # Loop n times, where n is the number of workspaces
+    for ((i=0; i<num_workspaces; i++)); do
+        if [ $1 -eq $i ]; then
+            icon=""
+            class="focused"
+        else
+            icon=""
+            class="empty"
+        fi
+        buf="$buf (button :class \"$class\" :onclick \"wmctrl -s $i\" \"$icon\")"
+    done
+
+    echo "(box :class \"workspaces\" :halign \"start\" :valign \"center\" :space-evently true :spacing 10 $buf)"
+}
+
+print_workspaces "0"
+# Use xprop to spy on the root window for changes to _NET_CURRENT_DESKTOP
+xprop -spy -root _NET_CURRENT_DESKTOP | while read -r line; do
+    # Extract the workspace from the output line
+    workspace=$(echo "$line" | cut -d'=' -f2 | tr -d '[:space:]')  # Remove spaces, if any
+    # Print the workspace if it's not empty
+    if [ -n "$workspace" ]; then
+        print_workspaces "$workspace"
+    fi
+done
+

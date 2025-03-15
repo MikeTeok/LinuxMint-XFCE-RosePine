@@ -1,6 +1,6 @@
 window-frame, .window-frame:backdrop, .xfce4-panel menu  *  { box-shadow: 0 0 0 black; border-style: none; margin: 0px; border-radius: 0; box-shadow: none; }
 
-.popover, .popover.background { box-shadow: none; }
+.popover, .popover.background, popover { box-shadow: none; }
 
 decoration { box-shadow: none; margin: 0px; }
 
@@ -15,7 +15,7 @@ menu {
 }
 
 /********************
-       Thunar
+       General
 *******************/
 
 window{ 
@@ -28,7 +28,14 @@ border: none;}
 
 paned treeview { background-color: rgba(35, 33, 54, 0) }
 paned treeview:selected{ background-color: rgba(250, 244, 237, 0.5) }
-.thunar .view:selected{ background-color: #606070; color: #fff;}
+
+/********************
+    Window Manager
+**********************/
+.background {background-color: rgba(35, 33, 54, 0.6);}
+.frame {background-color: rgba(35, 33, 54, 0);}
+.view {background-color: rgba(35, 33, 54, 0);}
+.view:selected { background-color: rgba(250, 244, 237, 0.5) }
 
 /********************
       Gedit
@@ -42,3 +49,17 @@ headerbar * {background-color: rgba(35, 33, 54, 0);}
 .close.titlebutton {background-color: rgba(235, 111, 146, 0.6);}
 .maximize.titlebutton {background-color: rgba(61, 143, 176, 0.6);}
 .minimize.titlebutton {background-color: rgba(246, 193, 119, 0.6);}
+
+/********************
+      terminal
+*******************/
+VteTerminal, vte-terminal {
+    padding-left: 5px; padding-right: 6px;
+	padding-top: 12px; padding-bottom: 13px;
+}
+
+
+/********************
+       Thunar
+*******************/
+.thunar .view:selected{ background-color: #606070; color: #fff;}
