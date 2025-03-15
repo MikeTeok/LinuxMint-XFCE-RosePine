@@ -4,9 +4,9 @@
 
 // Global Styles
 .bar {
-  background-color: #3a3a3a;
+  background-color: #212335;
   color: #b0b4bc;
-  padding: 10px;
+ padding: 5px 10px;
 }
 
 // Styles on classes (see eww.yuck for more information)
@@ -23,11 +23,16 @@
   border-radius: 10px;
 }
 
+.metric label {
+  color: #D35D6E;
+  font-size: 20px;
+}
+
 .metric scale trough {
   all: unset;
   background-color: #4e4e4e;
   border-radius: 50px;
-  min-height: 3px;
+  min-height: 8px;
   min-width: 50px;
   margin-left: 10px;
   margin-right: 20px;

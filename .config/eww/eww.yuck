@@ -1,5 +1,5 @@
 
-
+(defvar eww "eww -c $HOME/.config/eww/")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                WORKSPACE
@@ -37,25 +37,35 @@
 ;;                 METRIC
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defwidget metric [label value onchange]
+(defwidget metric [label value onchange reveal ?hover_fn ?unhover_fn ?click_fn]
   (box :orientation "h"
        :class "metric"
        :space-evenly false
-    (box :class "label" label)
+    (eventbox :onhover hover_fn
+              :onhoverlost unhover_fn
+    (box :space-evenly false
+    (button :class "label" 
+            :onclick click_fn
+            label)
+    (revealer :transition "slideright" 
+              :reveal reveal
     (scale :min 0
            :max 101
            :active {onchange != ""}
            :value value
-           :onchange onchange)))
+           :onchange onchange))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 VOLUME
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defpoll volume :interval "1s"
+(defpoll current-volume :interval "1s"
   "scripts/getvol")
 
+(defvar vol_reveal false)
+(defvar volume_icon "󰕾 ")
+  
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 MAIN
@@ -69,16 +79,23 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "🔊"
-            :value volume
-            :onchange "amixer set Master {}%")
+    (metric :label volume_icon
+            :value current-volume
+            :onchange "amixer set Master {}%; "
+            :reveal vol_reveal
+            :hover_fn "${EWW_CMD} update vol_reveal=true"
+            :unhover_fn "${EWW_CMD} update vol_reveal=false"
+            :click_fn "scripts/volume")
     (metric :label ""
             :value {EWW_RAM.used_mem_perc}
-            :onchange "")
+            :onchange ""
+            :reveal true)
     (metric :label "💾"
             :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange "")
+            :onchange ""
+            :reveal true)
     time))
+
 
 (defwindow bar
   :monitor 0

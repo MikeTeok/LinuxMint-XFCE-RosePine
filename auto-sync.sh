@@ -6,4 +6,5 @@ cp ~/.config/fish/config.fish .config/fish/
 cp -r ~/.config/fish/themes/ .config/fish/
 cp -r ~/.config/oh-my-posh/ .config/
 cp -r ~/.config/neofetch/ .config/
-cp ~/Documents/scripts/picom.sh auto-start-picom.sh
+cp ~/Documents/scripts/picom.sh scripts/auto-start-picom.sh
+cp ~/.aliases scripts/
