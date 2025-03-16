@@ -1,58 +1,117 @@
 * {
   all: unset; // Unsets everything so you can style everything from scratch
 }
-
+/*
+html {
+  --base: #232136;
+  --surface: #2a273f;
+  --overlay: #393552;
+  --muted: #6e6a86;
+  --subtle: #908caa;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --gold: #f6c177;
+  --rose: #ea9a97;
+  --pine: #3e8fb0;
+  --foam: #9ccfd8;
+  --iris: #c4a7e7;
+  --highlight-low: #2a283e;
+  --highlight-med: #44415a;
+  --highlight-high: #56526e;
+}
+*/
 // Global Styles
 .bar {
   background-color: #212335;
-  color: #b0b4bc;
-  padding: 5px 10px;
+  color: #e0def4;
+  padding: 3px 10px;
   border-radius: 20px;
 }
 
 // Styles on classes (see eww.yuck for more information)
 
-.sidestuff slider {
-  all: unset;
-  color: #ffd5cd;
+/********************
+     workspace
+********************/
+.workspaces button:hover {
+  color: #f6c177;
 }
 
-.metric scale trough highlight {
+.workspaces {
+  padding-top: 6px;
+  padding-left: 6px;
+}
+
+.workspaces button{
+  color: #ea9a97;
+}
+
+
+/********************
+     sidestuff
+********************/
+.sidestuff slider {
   all: unset;
-  background-color: #D35D6E;
+  color: #f6c177;
+}
+
+/********************
+     volume
+********************/
+.volume scale trough highlight {
+  all: unset;
+  background-color: #f6c177;
   color: #000000;
   border-radius: 10px;
 }
 
-.metric label {
-  color: #D35D6E;
-  font-size: 20px;
+.volume label {
+  color: #f6c177;
+  font-size: 22px;
+  padding-right: 5px;
 }
 
-.metric scale trough {
+.volume scale trough {
   all: unset;
   background-color: #4e4e4e;
   border-radius: 50px;
   min-height: 8px;
   min-width: 50px;
   margin-left: 10px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
-.label-ram {
-  font-size: large;
+.volume button:hover label{
+  color: #908caa;
+}
+/********************
+     power
+********************/
+
+.power label {
+  color: #eb6f92;
+  font-size: 18px;
+  padding: 0px 5px;
 }
 
-.workspaces button:hover {
-  color: #D35D6E;
+.shutdown label{
+  color: #eb6f92;
+  font-size: 18px;
+  padding-top: 2px;
 }
 
-.workspaces {
-  padding-top: 4px;
-  padding-left: 6px;
+.logout label{
+  color: #9ccfd8;
+  font-size: 20px;
 }
 
-.workspaces button{
+.reboot label{
+  color: #c4a7e7;
+  font-size: 20px;
+  padding-top: 2px;
+}
 
+.power button:hover label{
+  color: #908caa;
 }
 

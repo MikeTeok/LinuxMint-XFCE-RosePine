@@ -22,14 +22,14 @@ menu {
 window{ 
 background-color: rgba(35, 33, 54, 0.6);
 border: none;}
-
+/*
 grid, paned *, toolbar, menubar { 
 background-color: rgba(35, 33, 54, 0);
 border: none;}
 
 paned treeview { background-color: rgba(35, 33, 54, 0) }
 paned treeview:selected{ background-color: rgba(250, 244, 237, 0.5) }
-
+*/
 /********************
     Window Manager
 **********************/
@@ -43,8 +43,8 @@ paned treeview:selected{ background-color: rgba(250, 244, 237, 0.5) }
       Gedit
 *******************/
 
-window paned {background-color: rgba(35, 33, 54, 0);}
-paned * {background-color: rgba(35, 33, 54, 0);}
+window paned {background-color: rgba(35, 33, 54, 0);}/*
+paned * {background-color: rgba(35, 33, 54, 0);}*/
 headerbar  {background-color: rgba(35, 33, 54, 0.6);}
 headerbar * {background-color: rgba(35, 33, 54, 0);}
 

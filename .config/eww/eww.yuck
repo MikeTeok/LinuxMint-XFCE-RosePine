@@ -32,28 +32,6 @@
 (defpoll time :interval "10s"
   "date '+%d %b, %I:%M %p'")
   
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;                 METRIC
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defwidget metric [label value onchange reveal ?hover_fn ?unhover_fn ?click_fn]
-  (box :orientation "h"
-       :class "metric"
-       :space-evenly false
-    (eventbox :onhover hover_fn
-              :onhoverlost unhover_fn
-    (box :space-evenly false
-    (button :class "label" 
-            :onclick click_fn
-            label)
-    (revealer :transition "slideleft" 
-              :reveal reveal
-    (scale :min 0
-           :max 101
-           :active {onchange != ""}
-           :value value
-           :onchange onchange))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -65,6 +43,54 @@
 
 (defvar vol_reveal false)
 (defvar volume_icon "󰕾 ")
+
+(defwidget volume []
+  (box :orientation "h"
+       :class "volume"
+       :space-evenly false
+    (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
+              :onhoverlost "${EWW_CMD} update vol_reveal=false"
+    (box :space-evenly false
+    (revealer :transition "slideleft" 
+              :reveal vol_reveal
+    (scale :min 0
+           :max 101
+           :active true
+           :value current-volume
+           :flipped true
+           :onchange "amixer set Master {}%; "))
+    (button :class "label" 
+            :onclick "scripts/volume"
+            volume_icon)
+    ))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 POWER
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar power_reveal false)
+(defwidget power []
+  (box :orientation "h"
+       :class "power"
+       :space-evenly false
+    (eventbox :onhover "${EWW_CMD} update power_reveal=true"
+              :onhoverlost "${EWW_CMD} update power_reveal=false"
+    (box :space-evenly false
+    (revealer :transition "slideleft" 
+              :reveal power_reveal
+    (box :space-evenly true
+    (button :class "logout" 
+            :onclick "xfce4-session-logout --logout"
+            "󰍃 ")
+    (button :class "reboot" 
+            :onclick "xfce4-session-logout --reboot"
+            " ")
+    ))
+    (button :class "shutdown" 
+            :onclick "shutdown now"
+            "⏻ ")
+    ))))
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -79,21 +105,9 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label volume_icon
-            :value current-volume
-            :onchange "amixer set Master {}%; "
-            :reveal vol_reveal
-            :hover_fn "${EWW_CMD} update vol_reveal=true"
-            :unhover_fn "${EWW_CMD} update vol_reveal=false"
-            :click_fn "scripts/volume")
-    (metric :label ""
-            :value {EWW_RAM.used_mem_perc}
-            :onchange ""
-            :reveal true)
-    (metric :label "⏻"
-            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
-            :onchange ""
-            :reveal true)
+    (volume)
+    (power)
+
     time))
 
 
@@ -101,9 +115,9 @@
   :monitor 0
   :windowtype "dock"
   :geometry (geometry :x "0%"
-                      :y "0%"
-                      :width "90%"
+                      :y "0.5%"
+                      :width "98%"
                       :height "10px"
                       :anchor "top center")
-  :reserve (struts :side "top" :distance "4%")
+  :reserve (struts :side "top" :distance "4.3%")
   (bar))
