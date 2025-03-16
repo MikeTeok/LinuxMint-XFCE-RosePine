@@ -1,0 +1,11 @@
+#!/bin/bash
+
+playerctl --follow status | while read status; do
+    if [ "$status" = "Playing" ]; then
+        zscroll -d 0.3 -l 20 `playerctl metadata --format '{{ artist }} - {{ title }}'`
+    else
+        echo ""
+    fi
+done
+
+

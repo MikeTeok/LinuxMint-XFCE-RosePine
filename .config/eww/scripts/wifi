@@ -1,0 +1,28 @@
+#!/bin/bash
+
+symbol() {
+    status=$(cat /sys/class/net/w*/operstate)
+    
+    if [ $status = "down" ]; then
+        echo "󰤭 " && exit
+    fi
+    
+    signal=$(nmcli dev wifi list | grep "$(iwgetid -r)" | grep "^\*" | awk '{print $9}')
+    
+    if [ $signal -le 30 ]; then
+        echo "󰤟 " && exit
+    elif [ "$signal" -le 59 ]; then
+        echo "󰤢 " && exit
+    elif [ "$signal" -le 80 ]; then
+        echo "󰤥 " && exit
+    else
+        echo "󰤨 " && exit
+    fi
+}
+
+name() {
+iwgetid -r
+}
+
+[ "$1" = "icon" ] && symbol && exit
+[ "$1" = "name" ] && name && exit

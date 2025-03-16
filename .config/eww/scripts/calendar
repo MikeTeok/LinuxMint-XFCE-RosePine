@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Function to print workspaces and loop through them
+print_calendar() {
+    # Get the number of workspaces in Xfce
+    LOCK_FILE="$HOME/.cache/eww-calendar.lock"
+
+    # Open widgets
+    if [ ! -f "$LOCK_FILE" ]; then
+        echo "open"
+        /usr/local/bin/eww -c ~/.config/eww open calendar
+        sleep 0.5
+        touch $LOCK_FILE
+    else
+        echo "close"
+        eww close calendar
+        rm "$LOCK_FILE"
+        exit
+    fi
+}
+
+print_calendar

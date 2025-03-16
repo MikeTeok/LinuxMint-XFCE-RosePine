@@ -1,12 +1,33 @@
 
-(defvar eww "eww -c $HOME/.config/eww/")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                CALENDAR
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defwidget cal []
+	(box :class "cal-box" 
+		 :orientation "v"
+	(box :class "cal-inner-box"
+	(calendar :class "cal" 
+			  :day calendar_day 
+			  :month calendar_month 
+			  :year calendar_year))))
+(defpoll calendar_day :interval "10h"
+    "date '+%d'")
+(defpoll calendar_month :interval "10h"
+    "scripts/calendar")
+(defpoll calendar_year :interval "10h"
+    "date '+%Y'")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                WORKSPACE
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defwidget workspaces []
-  (literal :content workspaces_listen))
+  (box :orientation "h"
+       :space-evenly false
+  (literal :content workspaces_listen)
+  (music)))
 (deflisten workspaces_listen "scripts/workspace")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -15,23 +36,27 @@
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defwidget music []
+  (revealer :transition "slideright" 
+              :reveal {music != ""}
   (box :class "music"
        :orientation "h"
        :space-evenly false
-       :halign "center"
-    {music != "" ? "🎵${music}" : ""}))
+    {music != "" ? "${music}" : ""})))
 
 (deflisten music :initial ""
-  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+  "zscroll -d 0.3 -l 30 --match-command \"playerctl status\" --match-text \"Playing\" \"--scroll 1 --b '  '\" --match-text \"Paused\" \"--scroll 0 --b '  '\" --update-check true \"playerctl metadata --format '{{ artist }} - {{ title }}'\"")
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 TIME
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(defpoll time :interval "10s"
-  "date '+%d %b, %I:%M %p'")
-  
+(defpoll time_val :interval "10s"
+  "date '+%d %b  %I:%M %p'")
+(defwidget time []
+  (button :class "time" 
+            :onclick "scripts/calendar"
+            time_val))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -63,6 +88,19 @@
             :onclick "scripts/volume"
             volume_icon)
     ))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 WIFI
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defwidget wifi []
+	(box		:orientation "h"  
+				:tooltip wifi-name
+	(button		:onclick "xfce4-terminal -e nmtui --hide-borders --geometry=25x13+1720+20" 
+				:class "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -100,15 +138,15 @@
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)
-    (music)
+    (time)
     (sidestuff)))
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (volume)
+    (wifi)
     (power)
-
-    time))
+    ))
 
 
 (defwindow bar
@@ -121,3 +159,11 @@
                       :anchor "top center")
   :reserve (struts :side "top" :distance "4.3%")
   (bar))
+  
+;; Calendar Windows ;;
+(defwindow calendar
+	:geometry (geometry :x "43%" 
+						:y "5%" 
+						:width "270px" 
+						:height "60px")
+(cal))
