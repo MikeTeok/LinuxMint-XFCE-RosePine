@@ -68,12 +68,33 @@ html {
 /********************
      music
 ********************/
-.music {
-
-  padding-left: 5px;
-  padding-right: 5px;
+.music_box {
+  padding: 0px 10px;
+}
+.music_box * {
+  padding: 0px 3px;
 }
 
+.previous, .next {
+  color: #f6c177;
+  font-size: 20px;
+}
+
+.play {
+  color: #9ccfd8;
+}
+
+.stop {
+  color: #eb6f92;
+}
+
+.previous:hover, .next:hover, .play:hover, .stop:hover{
+  color: #44415a;
+}
+
+.music_label {
+  color: #e0def4;
+}
 /********************
      volume
 ********************/
@@ -96,7 +117,7 @@ html {
   border-radius: 50px;
   min-height: 8px;
   min-width: 50px;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-right: 10px;
 }
 

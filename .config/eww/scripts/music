@@ -1,11 +1,13 @@
 #!/bin/bash
 
-playerctl --follow status | while read status; do
-    if [ "$status" = "Playing" ]; then
-        zscroll -d 0.3 -l 20 `playerctl metadata --format '{{ artist }} - {{ title }}'`
-    else
-        echo ""
-    fi
-done
-
+#playerctl --follow status | while read status; do
+#    if [ "$status" = "Playing" ]; then
+#        playerctl metadata --format '{{ artist }} - {{ title }}'
+#    elif [ "$status" = "Paused" ]; then
+#        echo " "
+#    else
+#        echo ""
+#    fi
+#done
+zscroll -d 0.3 -l 30 -p "  " --match-command "playerctl status" --match-text "Playing" "--scroll 1 -l 30" --match-text "Paused" "--scroll 0 -l 1 -z True" --match-text "Stopped" "--scroll 1 -l 0 -z False" --update-check true "playerctl metadata --format '{{ artist }} - {{ title }}'"
 

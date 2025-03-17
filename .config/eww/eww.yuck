@@ -35,16 +35,32 @@
 ;;                 MUSIC
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar music_icon "")
 (defwidget music []
   (revealer :transition "slideright" 
-              :reveal {music != ""}
-  (box :class "music"
+              :reveal {music_l != ""}
+  (box :class "music_box"
        :orientation "h"
        :space-evenly false
-    {music != "" ? "${music}" : ""})))
+  (button :class "previous" 
+          :onclick "playerctl previous"
+          "󰒮")
+  (button :class "play" 
+          :onclick "playerctl play-pause;scripts/music_icon"
+          music_icon)
+  (button :class "stop" 
+          :onclick "playerctl stop"
+          "")
+  (button :class "next" 
+          :onclick "playerctl next"
+          "󰒭")
+  (box :class "music_label"
+       :orientation "h"
+       :space-evenly false
+    {music_l != "" ? "${music_l}" : ""}))))
 
-(deflisten music :initial ""
-  "zscroll -d 0.3 -l 30 --match-command \"playerctl status\" --match-text \"Playing\" \"--scroll 1 --b '  '\" --match-text \"Paused\" \"--scroll 0 --b '  '\" --update-check true \"playerctl metadata --format '{{ artist }} - {{ title }}'\"")
+(deflisten music_l :initial ""
+  "scripts/music")
   
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
@@ -76,17 +92,17 @@
     (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
               :onhoverlost "${EWW_CMD} update vol_reveal=false"
     (box :space-evenly false
+    (button :class "label" 
+            :onclick "scripts/volume"
+            volume_icon)
     (revealer :transition "slideleft" 
               :reveal vol_reveal
     (scale :min 0
            :max 101
            :active true
            :value current-volume
-           :flipped true
+           :flipped false
            :onchange "amixer set Master {}%; "))
-    (button :class "label" 
-            :onclick "scripts/volume"
-            volume_icon)
     ))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
