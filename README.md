@@ -9,7 +9,7 @@ Todo-list:
 4. ~~terminal menubar customization~~ (dropped)
 5. ~~wobbly window~~ (not compatible)
 6. ~~install edge~~ (zbb, use firefox)
-7. eww bar music control
+7. ~~eww bar music control~~
 8. eww widget
 9. plank or eww dock
 10. ~~text editor (gedit)~~
