@@ -18,3 +18,5 @@ Todo-list:
 13. eww bar wifi menu
 14. eww baw separated
 15. start menu
+16. lightdm custom
+17. input method (chinese/korean)
