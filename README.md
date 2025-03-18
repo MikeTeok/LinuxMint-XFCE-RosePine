@@ -11,7 +11,7 @@ Todo-list:
 6. ~~install edge~~ (zbb, use firefox)
 7. ~~eww bar music control~~
 8. eww widget
-9. plank or eww dock
+9. ~~plank~~
 10. ~~text editor (gedit)~~
 11. ~~tiling manager~~
 12. Customize FirefoxCSS
