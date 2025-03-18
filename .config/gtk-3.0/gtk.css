@@ -57,7 +57,7 @@ text selection {background-color: rgba(86,82,110,0.5)}
 *******************/
 VteTerminal, vte-terminal {
     padding-left: 5px; padding-right: 6px;
-	padding-top: 12px; padding-bottom: 13px;
+	padding-top: 11px; padding-bottom: 11px;
 }
 
 
@@ -67,6 +67,34 @@ VteTerminal, vte-terminal {
 .thunar .view:selected{ background-color: #606070; color: #fff;}
 
 
+/********************
+       whisker
+*******************/
+window#whiskermenu-window * {
+  border-radius: 12px;
+  background-color: rgba(35, 33, 54, 0);
+  border: none;
+}
 
+window#whiskermenu-window > frame {
+  background-color: rgba(35, 33, 54, 0.6);
+}
 
+window#whiskermenu-window entry.search:focus {
+  background-color: rgba(235, 111, 146, 0);
+}
+
+window#whiskermenu-window > frame > border {
+  box-shadow: 0 0 0 black; border-style: none; margin: 0px; border-radius: 0; box-shadow: none;
+}
+
+window#whiskermenu-window scrolledwindow.frame {
+  padding: 3px;
+  background-color: rgba(35, 33, 54, 0);
+  border-radius: 12px;
+}
+window#whiskermenu-window scrolledwindow.frame:hover {
+  background-color: rgba(250, 244, 237, 0.12);
+  color: #faf4ed;
+}
 

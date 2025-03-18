@@ -135,10 +135,10 @@
               :reveal power_reveal
     (box :space-evenly true
     (button :class "logout" 
-            :onclick "xfce4-session-logout --logout"
+            :onclick "xfce4-session-logout --logout -f"
             "󰍃 ")
     (button :class "reboot" 
-            :onclick "xfce4-session-logout --reboot"
+            :onclick "xfce4-session-logout --reboot -f"
             " ")
     ))
     (button :class "shutdown" 
@@ -168,6 +168,8 @@
 (defwindow bar
   :monitor 0
   :windowtype "dock"
+  :stacking "bg"
+  :exclusive true
   :geometry (geometry :x "0%"
                       :y "0.5%"
                       :width "98%"
