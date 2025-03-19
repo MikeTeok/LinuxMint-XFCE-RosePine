@@ -26,6 +26,8 @@
 (defwidget workspaces []
   (box :orientation "h"
        :space-evenly false
+       :vexpand true
+       :hexpand true
   (literal :content workspaces_listen)
   (music)))
 (deflisten workspaces_listen "scripts/workspace")

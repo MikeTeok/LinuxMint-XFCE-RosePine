@@ -71,7 +71,7 @@ VteTerminal, vte-terminal {
        whisker
 *******************/
 window#whiskermenu-window * {
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: rgba(35, 33, 54, 0);
   border: none;
 }
@@ -93,7 +93,8 @@ window#whiskermenu-window scrolledwindow.frame {
   background-color: rgba(35, 33, 54, 0);
   border-radius: 12px;
 }
-window#whiskermenu-window scrolledwindow.frame:hover {
+
+window#whiskermenu-window scrolledwindow.frame treeview.view:focus {
   background-color: rgba(250, 244, 237, 0.12);
   color: #faf4ed;
 }

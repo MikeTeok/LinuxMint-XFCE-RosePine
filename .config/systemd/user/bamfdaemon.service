@@ -1,0 +1,10 @@
+[Unit]
+Description=BAMF Application Matcher Framework
+PartOf=graphical-session.target
+
+[Service]
+Type=dbus
+BusName=org.ayatana.bamf
+ExecStartPre=/bin/sleep 2
+ExecStart=/usr/lib/x86_64-linux-gnu/bamf/bamfdaemon
+Restart=on-failure
