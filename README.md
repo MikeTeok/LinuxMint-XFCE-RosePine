@@ -16,7 +16,7 @@ Todo-list:
 11. ~~tiling manager~~
 12. Customize FirefoxCSS
 13. eww bar wifi menu
-14. eww baw separated
-15. start menu
+14. eww bar separated
+15. ~~start menu (whiskermenu)~~
 16. lightdm custom
 17. input method (chinese/korean)
