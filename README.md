@@ -1,14 +1,16 @@
 # LinuxMint-XFCE-RosePine
-A rice for my personal LinuxMint XFCE Version
+A rice for my personal LinuxMint XFCE Version  
+Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
+
+# Gallery  
+![Desktop](https://github.com/user-attachments/assets/f7b77588-d3d1-4b07-80a1-1a1a5297c234)
+
 
 
 Todo-list:
 1. ~~neofetch theme~~
 2. ~~install fish~~
 3. ~~install oh my posh~~
-4. ~~terminal menubar customization~~ (dropped)
-5. ~~wobbly window~~ (not compatible)
-6. ~~install edge~~ (zbb, use firefox)
 7. ~~eww bar music control~~
 8. eww widget
 9. ~~plank~~
@@ -17,6 +19,12 @@ Todo-list:
 12. Customize FirefoxCSS
 13. eww bar wifi menu
 14. eww bar separated
-15. ~~start menu (whiskermenu)~~
-16. lightdm custom
-17. input method (chinese/korean)
+15. ~~eww volume popup~~
+16. ~~start menu (whiskermenu)~~
+17. lightdm custom
+18. ~~input method (chinese/korean)xfcit5~~
+
+ZBB item:  
+1. ~~terminal menubar customization~~ (dropped)
+2. ~~wobbly window~~ (not compatible)
+3. ~~install edge~~ (zbb, use firefox)
