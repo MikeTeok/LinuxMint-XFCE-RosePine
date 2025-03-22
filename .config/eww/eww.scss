@@ -1,32 +1,28 @@
+$base: #232136;
+$surface: #2a273f;
+$overlay: #393552;
+$muted: #6e6a86;
+$subtle: #908caa;
+$text: #e0def4;
+$love: #eb6f92;
+$gold: #f6c177;
+$rose: #ea9a97;
+$pine: #3e8fb0;
+$foam: #9ccfd8;
+$iris: #c4a7e7;
+$highlight-low: #2a283e;
+$highlight-med: #44415a;
+$highlight-high: #56526e;
+
 * {
   all: unset; // Unsets everything so you can style everything from scratch
 }
-/*
-html {
-  --base: #232136;
-  --surface: #2a273f;
-  --overlay: #393552;
-  --muted: #6e6a86;
-  --subtle: #908caa;
-  --text: #e0def4;
-  --love: #eb6f92;
-  --gold: #f6c177;
-  --rose: #ea9a97;
-  --pine: #3e8fb0;
-  --foam: #9ccfd8;
-  --iris: #c4a7e7;
-  --highlight-low: #2a283e;
-  --highlight-med: #44415a;
-  --highlight-high: #56526e;
-}
-*/
+
 // Global Styles
 .bar {
   background-color: rgba(35, 33, 54, 0);
-  color: #e0def4;
+  color: $text;
   padding: 3px 10px;
-  border-radius: 20px;
-  
 }
 
 /********************
@@ -35,7 +31,7 @@ html {
 .calendar {
   all: unset;
   background-color: rgba(35, 33, 54, 0);
-  color: #e0def4;
+  color: $text;
 }
 .background.calendar {background-color: rgba(35, 33, 54, 0.4);}
 .cal:selected {background-color: rgba(235, 188, 186, 0.4);}
@@ -44,17 +40,17 @@ html {
      workspace
 ********************/
 .workspaces button:hover {
-  color: #f6c177;
+  color: $gold;
 }
 
 .workspaces {
   padding-top: 6px;
-  padding-left: 20px;
+  padding-left: 6px;
   padding-right: 10px;
 }
 
 .workspaces button{
-  color: #ea9a97;
+  color: $rose;
 }
 
 
@@ -63,7 +59,7 @@ html {
 ********************/
 .sidestuff slider {
   all: unset;
-  color: #f6c177;
+  color: $gold;
 }
 
 /********************
@@ -77,37 +73,37 @@ html {
 }
 
 .previous, .next {
-  color: #f6c177;
+  color: $gold;
   font-size: 20px;
 }
 
 .play {
-  color: #9ccfd8;
+  color: $foam;
 }
 
 .stop {
-  color: #eb6f92;
+  color: $love;
 }
 
 .previous:hover, .next:hover, .play:hover, .stop:hover{
-  color: #44415a;
+  color: $highlight-med;
 }
 
 .music_label {
-  color: #e0def4;
+  color: $text;
 }
 /********************
      volume
 ********************/
 .volume scale trough highlight {
   all: unset;
-  background-color: #f6c177;
+  background-color: $gold;
   color: #000000;
   border-radius: 10px;
 }
 
 .volume label {
-  color: #f6c177;
+  color: $gold;
   font-size: 22px;
   padding-right: 5px;
 }
@@ -123,49 +119,134 @@ html {
 }
 
 .volume button:hover label{
-  color: #908caa;
+  color: $subtle;
+}
+
+.volume_popup scale trough highlight {
+  background-color: $foam;
+  color: #000000;
+  border-radius: 10rem;
+}
+.volume_popup scale trough {
+  all: unset;
+  background-color: #6e6e6e;
+  border-radius: 10rem;
+  min-height: 10rem;
+  min-width: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.volume_popup {
+  border-radius: 10rem;
+}
+
+.volume_popup label {
+  color: $overlay;
+  margin-top: -3rem;
+  margin-left: -0.5rem;
+  font-size: 25px;
 }
 /********************
      wifi
 ********************/
 .wifi-icon label {
-  color: #3e8fb0;
+  color: $pine;
   font-size: 20px;
-  padding-top: 2px;
+  padding-top: 1px;
   padding-right: 5px;
 }
 
 .wifi-icon:hover label{
-  color: #908caa;
+  color: $subtle;
 }
+
+.wifi-label {
+  font-size: 16px;
+
+}
+.wifi_menu {
+  padding: 1rem;
+}
+
+.quick-settings-icon {
+    padding-right: 0.75rem;
+}
+.quick_settings_button {
+    transition: 500ms;
+    background-color: $overlay;
+    color: $text;
+    border-radius: 1rem;
+    padding: 0.75rem;
+    font-size: 1.05rem;
+}
+
+.quick_settings_button:hover {
+    background-color: mix($muted, $pine, 70%);
+}
+
+.quick_settings_button_toggled {
+    background-color: $pine;
+    color: $text;
+}
+
+.quick_settings_button_toggled:hover {
+    background-color: mix($muted, $pine, 70%);
+}
+
+.wifi-item:hover {
+    background-color: $muted;
+}
+
+.wifi-item, .wifi-item-enabled {
+    padding: 4px 5px;
+    border-radius: 0.5rem;
+}
+
+.wifi-refresh {
+    transition: 300ms;
+    background-color: rgba(144, 140, 170, 0.4);
+    color: $text;
+    border-radius: 1rem;
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+}
+.wifi-item-enabled:hover {
+    background-color: mix($rose, $text, 99%);
+}
+
+.wifi-item-enabled {
+    background-color: rgba(235, 188, 186, 0.4);
+}
+.wifi-refresh:hover {background-color:mix($rose, $subtle, 20%);}
+.wifi-refresh:active {background-color:mix($rose, $subtle, 99%);}
 /********************
      power
 ********************/
 
 .power label {
-  color: #eb6f92;
+  color: $love;
   font-size: 18px;
   padding: 0px 5px;
 }
 
 .shutdown label{
-  color: #eb6f92;
+  color: $love;
   font-size: 18px;
   padding-top: 2px;
 }
 
 .logout label{
-  color: #9ccfd8;
+  color: $foam;
   font-size: 20px;
 }
 
 .reboot label{
-  color: #c4a7e7;
+  color: $iris;
   font-size: 20px;
   padding-top: 2px;
 }
 
 .power button:hover label{
-  color: #908caa;
+  color: $subtle;
 }
 

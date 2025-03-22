@@ -1,0 +1,33 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 MUSIC
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defpoll music_icon :interval "1s"
+"scripts/music_icon")
+
+(defwidget music []
+  (revealer :transition "slideright" 
+              :reveal {music_l != ""}
+  (box :class "music_box"
+       :orientation "h"
+       :space-evenly false
+  (button :class "previous" 
+          :onclick "playerctl previous"
+          "󰒮")
+  (button :class "play" 
+          :onclick "playerctl play-pause;scripts/music_icon"
+          music_icon)
+  (button :class "stop" 
+          :onclick "playerctl stop"
+          "")
+  (button :class "next" 
+          :onclick "playerctl next"
+          "󰒭")
+  (box :class "music_label"
+       :orientation "h"
+       :space-evenly false
+    {music_l != "" ? "${music_l}" : ""}))))
+
+(deflisten music_l :initial ""
+  "scripts/music")

@@ -1,0 +1,66 @@
+#!/bin/bash
+
+menu() {
+    # Get the number of workspaces in Xfce
+    LOCK_FILE="$HOME/.cache/eww-wifi.lock"
+
+    # Open widgets
+    if [ ! -f "$LOCK_FILE" ]; then
+        eww open wifi_menu
+        sleep 0.5
+        touch $LOCK_FILE
+    else
+        eww close wifi_menu
+        rm "$LOCK_FILE"
+        exit
+    fi
+}
+
+status() {
+    status=$(nmcli radio wifi)
+    
+    if [ $status = "enabled" ]; then
+        nmcli radio wifi off
+        eww update wifi_status="off"
+    else
+        nmcli radio wifi on
+        eww update wifi_status="on"
+    fi
+}
+
+wifi_list() {
+    # Force a Wi-Fi scan to get fresh results
+    buf=""
+    nmcli device wifi rescan
+#    sleep 2  # Give some time for the scan to complete
+
+    # Capture SSID and BARS into an array
+    mapfile -t wifi_list < <(nmcli -t -f IN-USE,SSID,BARS device wifi list)
+
+    # Loop through each Wi-Fi network found
+    for wifi in "${wifi_list[@]}"; do
+        inuse=$(echo "$wifi" | cut -d: -f1 | tr -d ' ')
+        ssid=$(echo "$wifi" | cut -d: -f2)
+        bars=$(echo "$wifi" | cut -d: -f3)
+        class="wifi-item"
+
+        # Print SSID and signal strength
+        if [ -z "$ssid" ]; then
+            continue
+        fi
+        
+        if [ -n "$inuse" ]; then
+            class="wifi-item-enabled"
+        fi
+        
+        buf="$buf (button :class \"$class\" :onclick \"\" :hexpand true (box :orientation \"h\" :hexpand true :space-evenly false (label :hexpand true :halign \"start\" :text \"$ssid\") (label :hexpand true :halign \"end\" :text \"$bars\")))"
+    done
+    
+    eww update wifi_list_content="(scroll :hexpand true :class \"wifi-scroll\" :hscroll false :vscroll true :height 300 (box :class \"wifi-list\" :orientation \"v\" :halign \"start\" :valign \"center\" :hexpand true :space-evently true $buf))"
+    
+#    echo "(label :class \"wifi-bar\" :halign \"start\" :space-evently false :valign \"start\" :text \"▂▄▆_\")"
+}
+
+[ "$1" = "status" ] && status && exit
+[ "$1" = "menu" ] && menu && exit
+[ "$1" = "list" ] && wifi_list && exit

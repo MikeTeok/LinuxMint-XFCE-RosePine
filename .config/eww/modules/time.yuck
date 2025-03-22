@@ -1,0 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 TIME
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defpoll time_val :interval "10s"
+  "date '+%d %b  %I:%M %p'")
+(defwidget time []
+  (button :class "time" 
+            :onclick "scripts/calendar"
+            time_val))
+

@@ -1,0 +1,27 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 POWER
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar power_reveal false)
+(defwidget power []
+  (box :orientation "h"
+       :class "power"
+       :space-evenly false
+    (eventbox :onhover "${EWW_CMD} update power_reveal=true"
+              :onhoverlost "${EWW_CMD} update power_reveal=false"
+    (box :space-evenly false
+    (revealer :transition "slideleft" 
+              :reveal power_reveal
+    (box :space-evenly true
+    (button :class "logout" 
+            :onclick "xfce4-session-logout --logout -f"
+            "󰍃 ")
+    (button :class "reboot" 
+            :onclick "xfce4-session-logout --reboot -f"
+            " ")
+    ))
+    (button :class "shutdown" 
+            :onclick "shutdown now"
+            "⏻ ")
+    ))))

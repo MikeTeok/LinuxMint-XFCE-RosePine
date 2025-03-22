@@ -9,5 +9,4 @@ cp -r ~/.config/neofetch/ .config/
 cp -r ~/Documents/scripts/ ./
 cp ~/.aliases scripts/
 cp -r ~/.config/systemd/ .config/
-cp -r ~/.icons ./
 cp -r ~/.themes ./

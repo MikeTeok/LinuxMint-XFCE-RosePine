@@ -4,7 +4,7 @@
 status=$(playerctl status)
 
 if [ $status = 'Playing' ]; then
-    eww update music_icon=""
+    echo ""
 else
-    eww update music_icon=""
+    echo ""
 fi

@@ -4,7 +4,7 @@ symbol() {
     status=$(cat /sys/class/net/w*/operstate)
     
     if [ $status = "down" ]; then
-        echo "󰤭 " && exit
+        echo "󰤮 " && exit
     fi
     
     signal=$(nmcli dev wifi list | grep "$(iwgetid -r)" | grep "^\*" | awk '{print $9}')
@@ -15,13 +15,17 @@ symbol() {
         echo "󰤢 " && exit
     elif [ "$signal" -le 80 ]; then
         echo "󰤥 " && exit
-    else
+    elif [ "$signal" -gt 80 ]; then
         echo "󰤨 " && exit
+    else
+        echo "󰤯 " && exit
     fi
 }
 
 name() {
-iwgetid -r
+    wifi=$(iwgetid -r)
+    
+    echo "$wifi"
 }
 
 [ "$1" = "icon" ] && symbol && exit

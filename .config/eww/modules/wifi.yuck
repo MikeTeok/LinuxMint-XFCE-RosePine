@@ -1,0 +1,61 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 WIFI
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defwidget wifi []
+	(box		:orientation "h"  
+				:tooltip wifi-name
+	(button		:onclick "scripts/wifi_menu menu" 
+				:class "wifi-icon" wifi-icon)))
+(defpoll wifi-icon :interval "1s" "scripts/wifi icon")
+(defpoll wifi-name :interval "1s" "scripts/wifi name")
+
+(defvar wifi_status "on")
+
+(defwidget quick_settings_button [condition action icon label class]
+    (button :onclick {action} :class {condition ? "quick_settings_button ${class}" : "quick_settings_button quick_settings_button_toggled ${class}"} 
+            :hexpand true 
+        (box :orientation "h" :space-evenly false
+            (box :orientation "h" :space-evenly false :halign "start"
+                (label :class "quick-settings-icon" :text {icon})
+            )
+            (box :orientation "v" :class "quick-settings-info" :space-evenly false :halign "end" :valign "center"
+                (box :orientation "h" :space-evenly false :halign "start"
+                    (label :class "quick-settings-text" :text {label})
+                )
+                (box :orientation "h" :space-evenly false :halign "start"
+                    (label :class {condition ? "quick-settings-state" : "quick-settings-state quick-settings-state-enabled"} :text {condition ? "Off" : "On"})
+                )
+            )
+        )
+    )
+)
+
+(defwidget network []
+    (box :orientation "h" :space-evenly false :hexpand true :spacing 10
+    (quick_settings_button  :condition {wifi_status == "off"}
+                            :action "scripts/wifi_menu status"
+                            :icon wifi-icon
+                            :label {wifi-name == "" ? "Not connected" : wifi-name}
+                            :class "wifi-button"
+    )
+    (button :onclick "scripts/wifi_menu list"
+            :class "wifi-refresh"
+            :hexpand true
+            " "
+    )
+    )
+)
+
+(deflisten wifi_list_content "scripts/wifi_menu list")
+(defwidget wifi_menu []
+    (box    :orientation "v"  
+            :valign "start"
+            :halign "center"
+            :space-evenly false
+            :hexpand true
+            :spacing 10
+    (network)
+    (literal :content wifi_list_content)))
+

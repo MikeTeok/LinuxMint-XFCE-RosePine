@@ -52,6 +52,11 @@ headerbar * {background-color: rgba(35, 33, 54, 0);}
 .maximize.titlebutton {background-color: rgba(61, 143, 176, 0.6);}
 .minimize.titlebutton {background-color: rgba(246, 193, 119, 0.6);}
 text selection {background-color: rgba(86,82,110,0.5)}
+
+.reorderable-page:checked .image-button.small-button {color: rgba(224, 222, 244, 0.8)}
+.image-button.small-button {color: rgba(224, 222, 244, 0.5)}
+.reorderable-page{background-color: rgba(86, 82, 110, 0.1)}
+.reorderable-page:checked{background-color: rgba(86, 82, 110, 0.9)}
 /********************
       terminal
 *******************/

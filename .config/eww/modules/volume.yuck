@@ -1,0 +1,50 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 VOLUME
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defpoll current-volume :interval "1s"
+  "scripts/getvol")
+(defpoll current-volume-popup :interval "0.1s"
+  "scripts/getvol")
+
+(defvar vol_reveal false)
+(defvar volume_icon "󰕾 ")
+
+(defwidget volume []
+  (box :orientation "h"
+       :class "volume"
+       :space-evenly false
+    (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
+              :onhoverlost "${EWW_CMD} update vol_reveal=false"
+    (box :space-evenly false
+    (button :class "label" 
+            :onclick "scripts/volume"
+            volume_icon)
+    (revealer :transition "slideleft" 
+              :reveal vol_reveal
+    (scale :min 0
+           :max 101
+           :active true
+           :value current-volume
+           :flipped false
+           :onchange "amixer set Master {}%; "))
+    ))))
+
+(defwidget volume_popup [] 
+    (box :orientation "v"
+         :vexpand true
+         :hexpand true
+         :halign "center"
+         :valign "center"
+         :space-evenly false
+    (scale :orientation "v"
+           :min 0
+           :max 101
+           :active true
+           :value current-volume-popup
+           :flipped true
+           :vexpand true
+           :hexpand true
+           :onchange "amixer set Master {}%; ")
+     (label :text "")))
