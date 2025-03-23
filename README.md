@@ -3,7 +3,12 @@ A rice for my personal LinuxMint XFCE Version
 Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
 
 # Gallery  
-![Desktop](https://github.com/user-attachments/assets/f7b77588-d3d1-4b07-80a1-1a1a5297c234)
+### Old
+![Desktop](https://github.com/user-attachments/assets/f7b77588-d3d1-4b07-80a1-1a1a5297c234) 
+
+### New
+![Desktop](https://github.com/user-attachments/assets/69f02da4-44e2-407b-86b6-4796219decc6)
+![Desktop_w_startmenu](https://github.com/user-attachments/assets/fba8c2da-6c33-4f96-8cae-1910d7f6a019)
 
 
 
