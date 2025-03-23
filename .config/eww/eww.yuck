@@ -23,11 +23,20 @@
     (time)
     (sidestuff)))
 
+(defvar volume_reveal_top true)
+(defvar wifi_reveal_top true)
+(defvar power_reveal_top true)
 (defwidget sidestuff []
-  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (volume)
-    (wifi)
-    (power)
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "center"
+    (revealer :transition "slideleft" 
+              :reveal volume_reveal_top
+    (volume))
+    (revealer :transition "slideleft" 
+              :reveal wifi_reveal_top
+    (wifi))
+    (revealer :transition "slideleft" 
+              :reveal power_reveal_top
+    (power))
     ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -42,11 +51,50 @@
   :exclusive true
   :geometry (geometry :x "0%"
                       :y "0.5%"
-                      :width "99%"
-                      :height "10px"
+                      :width "5%"
+                      :height "3%"
                       :anchor "top center")
-  :reserve (struts :side "top" :distance "4.3%")
-  (bar))
+  :reserve (struts :side "top" :distance "4%")
+  (time))
+  
+(defwindow powerbar
+  :monitor 0
+  :windowtype "dock"
+  :stacking "bg"
+  :exclusive true
+  :geometry (geometry :x "-0.5%"
+                      :y "0.5%"
+                      :width "5%"
+                      :height "3%"
+                      :anchor "top right")
+  :reserve (struts :side "top" :distance "4%")
+  (sidestuff))
+
+(defwindow workspacebar
+  :monitor 0
+  :windowtype "dock"
+  :stacking "bg"
+  :exclusive true
+  :geometry (geometry :x "0.5%"
+                      :y "0.5%"
+                      :width "5%"
+                      :height "3%"
+                      :anchor "top left")
+  :reserve (struts :side "top" :distance "4%")
+  (workspaces))
+
+(defwindow musicbar
+  :monitor 0
+  :windowtype "dock"
+  :stacking "bg"
+  :exclusive true
+  :geometry (geometry :x "7%"
+                      :y "0.5%"
+                      :width "5%"
+                      :height "3%"
+                      :anchor "top left")
+  :reserve (struts :side "top" :distance "4%")
+  (music))
   
 ;; wifi menu Windows ;;
 (defwindow wifi_menu

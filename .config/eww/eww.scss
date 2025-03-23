@@ -22,9 +22,15 @@ $highlight-high: #56526e;
 .bar {
   background-color: rgba(35, 33, 54, 0);
   color: $text;
-  padding: 3px 10px;
+  padding: 3px 1rem;
 }
 
+.powerbar {
+  background-color: rgba(35, 33, 54, 0);
+  color: $text;
+  padding-left: 0.5rem;
+  padding-right: 0.1rem;
+}
 /********************
      calendar
 ********************/
@@ -44,9 +50,7 @@ $highlight-high: #56526e;
 }
 
 .workspaces {
-  padding-top: 6px;
-  padding-left: 6px;
-  padding-right: 10px;
+  padding: 0.6rem 1rem;
 }
 
 .workspaces button{
@@ -66,7 +70,7 @@ $highlight-high: #56526e;
      music
 ********************/
 .music_box {
-  padding: 0px 10px;
+  padding: 0px 1rem;
 }
 .music_box * {
   padding: 0px 3px;
@@ -105,7 +109,7 @@ $highlight-high: #56526e;
 .volume label {
   color: $gold;
   font-size: 22px;
-  padding-right: 5px;
+  padding-right: 1rem;
 }
 
 .volume scale trough {
@@ -115,7 +119,7 @@ $highlight-high: #56526e;
   min-height: 8px;
   min-width: 50px;
   margin-left: 0px;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 
 .volume button:hover label{
@@ -152,8 +156,7 @@ $highlight-high: #56526e;
 .wifi-icon label {
   color: $pine;
   font-size: 20px;
-  padding-top: 1px;
-  padding-right: 5px;
+  padding-right: 1rem;
 }
 
 .wifi-icon:hover label{
@@ -247,7 +250,7 @@ $highlight-high: #56526e;
 .power label {
   color: $love;
   font-size: 18px;
-  padding: 0px 5px;
+  padding-left: 0.5rem;
 }
 
 .shutdown label{

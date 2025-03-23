@@ -9,14 +9,14 @@
   "scripts/getvol")
 
 (defvar vol_reveal false)
-(defvar volume_icon "󰕾 ")
+(defvar volume_icon "󰕾")
 
 (defwidget volume []
   (box :orientation "h"
        :class "volume"
        :space-evenly false
-    (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
-              :onhoverlost "${EWW_CMD} update vol_reveal=false"
+    (eventbox :onhover "${EWW_CMD} update wifi_reveal_top=false; ${EWW_CMD} update power_reveal_top=false; ${EWW_CMD} update vol_reveal=true"
+              :onhoverlost "${EWW_CMD} update wifi_reveal_top=true; ${EWW_CMD} update power_reveal_top=true; ${EWW_CMD} update vol_reveal=false"
     (box :space-evenly false
     (button :class "label" 
             :onclick "scripts/volume"

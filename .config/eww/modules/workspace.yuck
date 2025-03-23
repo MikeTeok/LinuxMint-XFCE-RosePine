@@ -8,6 +8,5 @@
        :space-evenly false
        :vexpand true
        :hexpand true
-  (literal :content workspaces_listen)
-  (music)))
+  (literal :content workspaces_listen)))
 (deflisten workspaces_listen "scripts/workspace")

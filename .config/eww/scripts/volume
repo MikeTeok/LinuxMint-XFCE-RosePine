@@ -5,7 +5,7 @@ amixer set Master toggle;
 muted=$(amixer get Master | grep '\[off\]')
 
 if [$muted -eq '']; then
-    eww update volume_icon="󰕾 "
+    eww update volume_icon="󰕾"
 else
-    eww update volume_icon="󰸈 "
+    eww update volume_icon="󰸈"
 fi
