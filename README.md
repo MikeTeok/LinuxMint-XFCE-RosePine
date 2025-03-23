@@ -17,7 +17,7 @@ Todo-list:
 10. ~~text editor (gedit)~~
 11. ~~tiling manager~~
 12. Customize FirefoxCSS
-13. eww bar wifi menu
+13. ~~eww bar wifi menu~~
 14. eww bar separated
 15. ~~eww volume popup~~
 16. ~~start menu (whiskermenu)~~
