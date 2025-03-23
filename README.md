@@ -24,7 +24,7 @@ Todo-list:
 11. ~~tiling manager~~
 12. Customize FirefoxCSS
 13. ~~eww bar wifi menu~~
-14. eww bar separated
+14. ~~eww bar separated~~
 15. ~~eww volume popup~~
 16. ~~start menu (whiskermenu)~~
 17. lightdm custom
