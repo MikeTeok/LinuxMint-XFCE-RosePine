@@ -51,11 +51,14 @@
 ;; wifi menu Windows ;;
 (defwindow wifi_menu
     :stacking "fg"
+    :focusable true
+    :windowtype "dialog"
 	:geometry (geometry :anchor "top right"
 	                    :x "-1%"
 	                    :y "4.5%"
 						:width "200px" 
-						:height "200px")
+						:height "200px"
+						)
 (wifi_menu))
 
 ;; Volume Popup Windows ;;

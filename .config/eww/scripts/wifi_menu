@@ -28,21 +28,42 @@ status() {
     fi
 }
 
+refresh() {
+    rotate=0
+    end=$((SECONDS + 5))  # Run for 2 seconds
+    while [ $SECONDS -lt $end ]; do
+        rotate=$(echo "$rotate + 1" | bc)  # Increment rotate by 0.3
+        rotate=$(echo "$rotate % 100" | bc)  # Keep rotate within 0-100 range
+        eww update refresh_rotate=$rotate
+    done
+}
+
+connect() {
+    refresh &
+    nmcli device wifi connect "$1" password "$2"
+    wifi_list
+}
+
 wifi_list() {
     # Force a Wi-Fi scan to get fresh results
     buf=""
+    refresh
     nmcli device wifi rescan
+    eww update selected_wifi=""
 #    sleep 2  # Give some time for the scan to complete
 
     # Capture SSID and BARS into an array
-    mapfile -t wifi_list < <(nmcli -t -f IN-USE,SSID,BARS device wifi list)
+    mapfile -t wifi_list < <(nmcli -t -f IN-USE,SSID,BARS,BSSID device wifi list | sed 's/\\://g' )
 
     # Loop through each Wi-Fi network found
     for wifi in "${wifi_list[@]}"; do
         inuse=$(echo "$wifi" | cut -d: -f1 | tr -d ' ')
         ssid=$(echo "$wifi" | cut -d: -f2)
         bars=$(echo "$wifi" | cut -d: -f3)
+        bssid=$(echo "$wifi" | cut -d: -f4)
+        connect="Connect"
         class="wifi-item"
+        connect_action="\"scripts/wifi_menu connect \\\"$ssid\\\" \\\"\${password_l}\\\"\""
 
         # Print SSID and signal strength
         if [ -z "$ssid" ]; then
@@ -51,12 +72,25 @@ wifi_list() {
         
         if [ -n "$inuse" ]; then
             class="wifi-item-enabled"
+            connect="Disconnect"
+            connect_action="\"nmcli connection down \\\"$ssid\\\" ; scripts/wifi_menu list\""
         fi
         
-        buf="$buf (button :class \"$class\" :onclick \"\" :hexpand true (box :orientation \"h\" :hexpand true :space-evenly false (label :hexpand true :halign \"start\" :text \"$ssid\") (label :hexpand true :halign \"end\" :text \"$bars\")))"
+        buf="$buf 
+        (eventbox :class {selected_wifi==\"$bssid\" ? \"$class selected\" : \"$class\"}
+        (box :orientation \"v\" :hexpand true :space-evenly false 
+        (button :onclick {selected_wifi==\"$bssid\" ? \"eww update selected_wifi=\\\"\\\"\" : \"eww update selected_wifi=\\\"$bssid\\\"\"} :hexpand true 
+        (box :orientation \"h\" :hexpand true :space-evenly false 
+        (label :hexpand true :halign \"start\" :text \"$ssid\") 
+        (label :hexpand true :halign \"end\" :text \"$bars\"))) 
+        (revealer :transition \"slideup\" :reveal {selected_wifi==\"$bssid\"} 
+        (box :orientation \"h\" :hexpand true :space-evenly false :spacing 10 
+        (input :class \"password_box\" :hexpand true :password true :onchange \"eww update password_l={}\" :onaccept $connect_action :value \"\")
+        (button :class \"connect_button\" :vexpand true :hexpand true :halign \"end\" :onclick $connect_action \"$connect\")))))"
     done
     
-    eww update wifi_list_content="(scroll :hexpand true :class \"wifi-scroll\" :hscroll false :vscroll true :height 300 (box :class \"wifi-list\" :orientation \"v\" :halign \"start\" :valign \"center\" :hexpand true :space-evently true $buf))"
+    eww update wifi_list_content="(scroll :hexpand true :class \"wifi-scroll\" :hscroll false :vscroll true :height 300 (box :class \"wifi-list\" :orientation \"v\" :halign \"start\" :hexpand true :space-evenly false $buf))"
+#    echo "(scroll :hexpand true :class \"wifi-scroll\" :hscroll false :vscroll true :height 300 (box :class \"wifi-list\" :orientation \"v\" :halign \"start\" :hexpand true :space-evenly false $buf))"
     
 #    echo "(label :class \"wifi-bar\" :halign \"start\" :space-evently false :valign \"start\" :text \"▂▄▆_\")"
 }
@@ -64,3 +98,5 @@ wifi_list() {
 [ "$1" = "status" ] && status && exit
 [ "$1" = "menu" ] && menu && exit
 [ "$1" = "list" ] && wifi_list && exit
+[ "$1" = "refresh" ] && refresh && exit
+[ "$1" = "connect" ] && connect "$2" "$3" && exit

@@ -3,6 +3,9 @@
 ;;                 WIFI
 ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defvar selected_wifi "")
+
+
 (defwidget wifi []
 	(box		:orientation "h"  
 				:tooltip wifi-name
@@ -31,7 +34,8 @@
         )
     )
 )
-
+(deflisten refresh_rotate :initial "0" "scripts/wifi_menu refresh")
+(defvar password_l "")
 (defwidget network []
     (box :orientation "h" :space-evenly false :hexpand true :spacing 10
     (quick_settings_button  :condition {wifi_status == "off"}
@@ -43,7 +47,10 @@
     (button :onclick "scripts/wifi_menu list"
             :class "wifi-refresh"
             :hexpand true
-            " "
+        (transform :transform-origin-x "48.5%"
+                   :transform-origin-y "50%"
+                   :rotate refresh_rotate
+            (label :text " "))
     )
     )
 )

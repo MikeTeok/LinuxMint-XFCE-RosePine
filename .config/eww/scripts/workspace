@@ -18,7 +18,7 @@ print_workspaces() {
         buf="$buf (button :class \"$class\" :onclick \"wmctrl -s $i\" \"$icon\")"
     done
 
-    echo "(box :class \"workspaces\" :halign \"start\" :valign \"center\" :space-evently true :spacing 10 $buf)"
+    echo "(box :class \"workspaces\" :halign \"start\" :valign \"center\" :space-evenly true :spacing 10 $buf)"
 }
 
 print_workspaces "0"

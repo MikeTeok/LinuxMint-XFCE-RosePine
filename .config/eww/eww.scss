@@ -193,13 +193,24 @@ $highlight-high: #56526e;
     background-color: mix($muted, $pine, 70%);
 }
 
-.wifi-item:hover {
-    background-color: $muted;
+.wifi-item box, .wifi-item-enabled box{
+    padding: 4px 5px;
 }
 
-.wifi-item, .wifi-item-enabled {
-    padding: 4px 5px;
+.wifi-item, .wifi-item-enabled{
     border-radius: 0.5rem;
+}
+
+.wifi-item:hover {
+    background-color: mix(rgba(156, 207, 216, 0.6), $subtle, 50%);;
+}
+
+.wifi-item-enabled:hover {
+    background-color: mix(rgba(156, 207, 216, 0.4), $text, 50%);
+}
+
+.wifi-item-enabled {
+    background-color: rgba(156, 207, 216, 0.4);
 }
 
 .wifi-refresh {
@@ -210,15 +221,25 @@ $highlight-high: #56526e;
     padding: 0.75rem 1rem;
     font-size: 1.05rem;
 }
-.wifi-item-enabled:hover {
-    background-color: mix($rose, $text, 99%);
-}
 
-.wifi-item-enabled {
-    background-color: rgba(235, 188, 186, 0.4);
-}
 .wifi-refresh:hover {background-color:mix($rose, $subtle, 20%);}
 .wifi-refresh:active {background-color:mix($rose, $subtle, 99%);}
+
+.password_box {
+    background-color:rgba(35, 33, 54, 0.4);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.connect_button {
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    background-color:rgba(49, 116, 143, 0.4);
+}
+
+.connect_button:hover {background-color:mix(rgba(49, 116, 143, 0.7), $subtle, 20%);}
+.connect_button:active {background-color:mix(rgba(49, 116, 143, 0.9), $subtle, 99%);}
+.selected {background-color:rgba(156, 207, 216, 0.6);}
 /********************
      power
 ********************/
