@@ -1,5 +1,7 @@
 # LinuxMint-XFCE-RosePine
-A rice for my personal LinuxMint XFCE Version  
+A rice for my personal LinuxMint XFCE Version   
+
+the code is very smelly, please dont mind.  
 Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
 
 # Gallery  
