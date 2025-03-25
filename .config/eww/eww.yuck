@@ -28,13 +28,13 @@
 (defvar power_reveal_top true)
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "center"
-    (revealer :transition "slideleft" 
+    (revealer :transition "slideright" 
               :reveal volume_reveal_top
     (volume))
-    (revealer :transition "slideleft" 
+    (revealer :transition "slideright" 
               :reveal wifi_reveal_top
     (wifi))
-    (revealer :transition "slideleft" 
+    (revealer :transition "slideright" 
               :reveal power_reveal_top
     (power))
     ))

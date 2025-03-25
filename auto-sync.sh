@@ -10,3 +10,4 @@ cp -r ~/Documents/scripts/ ./
 cp ~/.aliases scripts/
 cp -r ~/.config/systemd/ .config/
 cp -r ~/.themes ./
+cp -r ~/.mozilla/firefox/11dd00o9.default-release/chrome/ ./

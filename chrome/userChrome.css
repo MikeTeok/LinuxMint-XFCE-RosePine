@@ -1,0 +1,23 @@
+:root {
+        --background-color: rgba(35, 33, 54, 0.5);
+    }
+
+#navigator-toolbox, #nav-bar {
+  background-color: transparent !important;
+}
+
+
+#main-window {
+  --lwt-accent-color: transparent !important;
+  --toolbar-bgcolor: transparent !important;
+  --toolbar-field-background-color:  transparent !important;
+}
+
+#urlbar, #urlbar-background  {
+  background-color: var(--background-color) !important;
+  border-radius: 0.7rem !important;
+}
+
+.extensionPage {
+  display: none !important;
+}
