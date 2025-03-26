@@ -57,6 +57,13 @@ text selection {background-color: rgba(86,82,110,0.5)}
 .image-button.small-button {color: rgba(224, 222, 244, 0.5)}
 .reorderable-page{background-color: rgba(86, 82, 110, 0.1)}
 .reorderable-page:checked{background-color: rgba(86, 82, 110, 0.9)}
+
+.warning * {color: #faf4ed;}
+
+.warning, .warning .text-button {
+    border: 1px solid rgba(246, 193, 119, 0.6);
+    border-radius: 0.7rem;
+}
 /********************
       terminal
 *******************/

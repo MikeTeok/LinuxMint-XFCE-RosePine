@@ -1,3 +1,92 @@
-body {
-  background-color: rgba(35, 33, 54, 0.6);
+
+:root {
+    --background-color: rgba(35, 33, 54, 0.5);
 }
+#browser:not(.browser-toolbox-background) {
+  background-color: transparent !important;
+}
+
+@-moz-document domain(youtube.com) {
+    #background, #chips-wrapper, ytd-mini-guide-entry-renderer, #background.ytd-masthead  {
+        background-color: transparent !important;
+        backdrop-filter: blur(20px);
+    }    
+    body, html, ytd-app, ytd-mini-guide-renderer {
+        background-color: transparent !important;
+    }
+    
+    #main-window {
+        --lwt-accent-color: transparent !important;
+        --toolbar-bgcolor: transparent !important;
+        --toolbar-field-background-color:  transparent !important;
+    } 
+    
+    html[dark], [dark] {
+        --yt-spec-base-background: transparent !important;
+    }
+    
+    .ytSearchboxComponentInputBoxDark {
+        background-color: hsla(0,0%,100%,.08) !important;
+    }
+    
+    .ytSearchboxComponentSuggestionsContainer {
+        background-color: rgba(35, 33, 54, 0.9) !important;
+        backdrop-filter: blur(20px) !important;
+    }
+    * {
+        isolation: isolate;
+    }
+}
+
+@-moz-document domain(reddit.com) {
+    header {
+        background-color: rgba(255,255,255,.5) !important;
+        backdrop-filter: blur(20px);
+    }    
+    body, html, .bg-neutral-background, .threadline, reddit-sidebar-nav, shreddit-post, aside, .reddit-search-bar, comment-body-header, shreddit-comment-tree{
+        background-color: transparent !important;
+    }
+}
+
+@-moz-document domain(reddit.com) {
+    header {
+        background-color: rgba(255,255,255,.5) !important;
+        backdrop-filter: blur(20px);
+    }    
+    body, html, reddit-sidebar-nav, shreddit-post, aside, .reddit-search-bar{
+        background-color: transparent !important;
+    }
+    .left-sidebar {
+        --color-neutral-background: transparent;
+    }
+}
+
+@-moz-document domain(google.com) {
+    .sfbg {
+        background-color: rgba(255,255,255,.5) !important;
+        backdrop-filter: blur(20px);        
+    }
+    body, html, div#search > * {
+        background-color: transparent !important;
+    }
+    .g, .appbar {
+        background-color: transparent !important;
+    }
+    div#rso {
+        * {
+            background-color: transparent !important;
+        }
+    }
+    div#cnt > div {
+
+    }
+}
+
+@-moz-document domain(github.com) {
+
+    body, html, header, #repository-container-header, .bgColor-muted, section{
+        background-color: transparent !important;
+    }
+}
+
+

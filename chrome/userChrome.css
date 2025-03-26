@@ -1,9 +1,12 @@
 :root {
-        --background-color: rgba(35, 33, 54, 0.5);
-    }
+  --background-color: rgba(35, 33, 54, 0.5);
+  --tabpanel-background-color: transparent !important;
+}
+
 
 #navigator-toolbox, #nav-bar {
   background-color: transparent !important;
+  border: none !important;
 }
 
 
@@ -13,11 +16,16 @@
   --toolbar-field-background-color:  transparent !important;
 }
 
-#urlbar, #urlbar-background  {
+#urlbar, #urlbar-background, #PopupAutoCompleteRichResult {
   background-color: var(--background-color) !important;
   border-radius: 0.7rem !important;
+  backdrop-filter: blur(5px);
 }
 
 .extensionPage {
   display: none !important;
+}
+
+#browser:not(.browser-toolbox-background) {
+  background-color: transparent !important;
 }
