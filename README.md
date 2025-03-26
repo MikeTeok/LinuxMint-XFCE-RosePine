@@ -12,7 +12,7 @@ Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
 
 ![Desktop](https://github.com/user-attachments/assets/fdf88d04-49ec-4234-a436-d9dacde22179)
 ![Desktop_w_startmenu](https://github.com/user-attachments/assets/fba8c2da-6c33-4f96-8cae-1910d7f6a019)
-![youtube](https://github.com/user-attachments/assets/d6390315-2710-441a-80f8-440cd97c687f)
+![youtube](https://github.com/user-attachments/assets/7895d73e-3b1c-46d5-84e6-cdc2bd4a7b3b)
 
 
 
