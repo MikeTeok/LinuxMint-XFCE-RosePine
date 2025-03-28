@@ -7,7 +7,7 @@ symbol() {
         echo "󰤮" && exit
     fi
     
-    signal=$(nmcli dev wifi list | grep "$(iwgetid -r)" | grep "^\*" | awk '{print $9}')
+    signal=$(nmcli -t -f IN-USE,SIGNAL device wifi list | grep "^\*" | cut -d':' -f2)
     
     if [ $signal -le 30 ]; then
         echo "󰤟" && exit

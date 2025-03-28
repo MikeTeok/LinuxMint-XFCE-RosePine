@@ -26,6 +26,10 @@
   display: none !important;
 }
 
-#browser:not(.browser-toolbox-background) {
+#browser:not(.browser-toolbox-background), #sidebar, .sidebar-panel[lwt-sidebar] {
   background-color: transparent !important;
+}
+
+#tabbrowser-tabbox {
+  box-shadow: none !important;
 }
