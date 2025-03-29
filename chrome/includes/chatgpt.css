@@ -1,0 +1,38 @@
+@-moz-document domain(chatgpt.com) {
+
+    .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\] {
+        background-color: transparent !important;
+    }
+    .bg-\[var\(--item-background-color\)\]:hover, .hover\:bg-token-sidebar-surface-secondary:hover, .hover\:bg-token-main-surface-secondary:hover, .dark\:bg-token-main-surface-secondary:is(.dark *) , .btn-secondary, .flex.items-center.cursor-pointer:hover{
+        background-color: hsla(0,0%,100%,.18) !important;
+    }
+    
+    * {
+        scrollbar-color: rgba(234, 154, 151, 0.3) transparent !important;
+    }
+    .bg-token-message-surface {
+        background-color: #3e8fb080 !important;
+    }
+    .dark\:prose-invert:is(.dark *) :where(code):not(:where([class~="not-prose"] *)) {
+        background-color: #ea9a9766 !important;
+    }
+    .disabled\:dark\:bg-token-text-quaternary:is(.dark *):disabled {
+        background-color: #9ccfd8 !important;
+    }
+    
+    .btn-secondary:hover, .enabled\:hover\:bg-token-main-surface-secondary:hover  {
+        border: 1px solid rgb(234, 154, 151) !important;
+        background-color: hsla(0,0%,100%,.08) !important;
+    }
+    .radix-state-open\:bg-token-main-surface-secondary[data-state="open"] {
+        background-color: rgba(35, 33, 54, 0.7) !important;
+    }
+    .bg-token-main-surface-primary.popover, .dark\:bg-black\/80:is(.dark *) {
+        background-color: rgba(35, 33, 54, 0.7) !important;
+    }
+    @media (hover:hover) and (pointer:fine) {
+        .dark\:can-hover\:hover\:bg-gray-700:hover:is(.dark *) {
+            background-color:hsla(0,0%,100%,.18)  !important;
+        }
+    }  
+}

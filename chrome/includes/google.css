@@ -28,7 +28,7 @@
     .RNNXgb:hover, .sbhl {
         background-color: hsla(0,0%,100%,.08) !important;
     }
-    .aajZCb, .WNN1b {
+    .aajZCb, .WNN1b{
         background: rgba(35, 33, 54, 0.7) !important;
         backdrop-filter: blur(20px) !important; 
         box-shadow: 0 0px 0px 0 #171717 !important;
@@ -38,7 +38,7 @@
     }
     .gNO89b, .RNmpXc, .vIifob, .BaegVc:hover, .iRPzcb  {
         background: hsla(0,0%,100%,.08) !important;
-        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
     }
     .gNO89b:hover, .RNmpXc:hover, .vIifob:hover {
         border: 1px solid rgb(234, 154, 151) !important;
@@ -78,7 +78,7 @@
     .tX9u1b:hover {
         box-shadow: inset 0 0 0 1px rgb(234, 154, 151) !important;
     }
-    .aRDKUe .Lvwayc {
+    .aRDKUe .Lvwayc, .cF4V5c  {
         background: rgba(35, 33, 54, 0.8) !important;
         backdrop-filter: blur(20px) !important;
     }
@@ -94,5 +94,18 @@
     }
     .sh-dtt__top-tools, .kH0Dhc {
         color: #fff !important;
+    }
+    .gy3Eif, div.Qy8Xkb {
+        border-color: hsla(0,0%,100%,.4) !important;
+    }
+    input.jfk-textinput, .gGbPid{
+        background: hsla(0,0%,100%,.1) !important;
+        border-radius: 0.5rem !important;
+    }
+    .goog-flat-menu-button.goog-flat-menu-button-hover {
+        background: rgba(35, 33, 54, 0.5) !important;
+    }
+    a {
+        color:hsla(0,0%,100%,.6)
     }
 }

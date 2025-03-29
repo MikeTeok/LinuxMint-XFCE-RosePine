@@ -33,3 +33,13 @@
 #tabbrowser-tabbox {
   box-shadow: none !important;
 }
+
+#contentAreaContextMenu {
+  background-color: transparent !important; 
+}
+
+menupopup, panel  {
+    /* To account for the box-shadow below */
+    --panel-shadow-margin: 0px !important;
+}
+

@@ -1,12 +1,38 @@
 @import "./includes/youtube.css";
 @import "./includes/google.css";
-
+@import "./includes/chatgpt.css";
 :root {
     --background-color: rgba(35, 33, 54, 0.5);
 }
 #browser:not(.browser-toolbox-background) {
   background-color: transparent !important;
 }
+
+@-moz-document url(about:newtab), url("about:home") { 
+    html{ 
+        --newtab-background-color: transparent !important; 
+        --newtab-background-color-secondary: transparent !important; 
+    } 
+    .search-wrapper .search-handoff-button {
+        background-color: hsla(0,0%,100%,.08) !important;
+        border-radius: 0.9rem !important;
+    }
+    .search-wrapper.fake-focus:not(search.disabled) .search-handoff-button {
+        border: 1px solid rgb(234, 154, 151) !important;
+        box-shadow: none !important;
+    }
+    .context-menu, .edit-topsites-wrapper .modal {
+        background-color: rgba(35, 33, 54, 0.7) !important;
+        backdrop-filter: blur(20px) !important; 
+    }
+    .top-site-outer:hover {
+        background-color: rgba(234, 154, 151, 0.3) !important;
+    }
+    .top-site-outer .tile {
+        box-shadow: none !important;
+    }
+} 
+
 
 @-moz-document domain(reddit.com) {
     header {
@@ -39,5 +65,6 @@
         background-color: transparent !important;
     }
 }
+
 
 
