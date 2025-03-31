@@ -1,0 +1,83 @@
+
+@-moz-document domain(reddit.com) {
+    faceplate-dialog, .bg-neutral-background-strong {
+        background-color: rgba(35, 33, 54, 0.8) !important;
+        backdrop-filter: blur(20px);
+    }
+    header {
+        background-color: rgba(255,255,255,.5) !important;
+        backdrop-filter: blur(20px);
+    }    
+    body, html, .bg-neutral-background, .threadline, reddit-sidebar-nav, shreddit-post, aside, comment-body-header, shreddit-comment-tree, .label-container:focus  {
+        background-color: transparent !important;
+    }
+    .left-sidebar {
+        --color-neutral-background: transparent !important;
+    }
+    .bg-neutral-background-selected, .button:hover, .bg-neutral-background-weak {
+        background-color: rgba(35, 33, 54, 0.8) !important;
+    }
+    .hover\:bg-neutral-background-hover:hover, .badge:hover, .group-hover\:bg-neutral-background-hover:hover {
+        background-color: hsla(0,0%,100%,.08) !important;
+    }
+    :root.theme-dark .sidebar-grid, :root.theme-dark .grid-container.grid, :root.theme-dark .sidebar-grid .theme-beta:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .sidebar-grid .theme-rpl:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .grid-container.grid .theme-beta:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .grid-container.grid .theme-rpl:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container) {
+    --color-neutral-background: transparent !important;
+    
+    }
+    .button {
+        background: hsla(0,0%,100%,.08) !important;
+    }
+    .button.bg-transparent:hover, .button-plain:hover , .button-plain-weak:hover, .label-container{
+        background: hsla(0,0%,100%,.08) !important;
+    }
+    .switch-input-primary.outer {
+        --checked-color-background-default: #3e8fb0 !important;
+        --checked-color-background-hover: #9ccfd8 !important;
+        --color-switch-input-background-default: hsla(0,0%,100%,.08) !important;
+    }
+    .\!rounded-none, .rounded-none, .hover\:bg-neutral-background-hover{
+        border-radius: 0.5rem !important;
+    }
+    .button-plain, .button-plain-weak,  .button.bg-transparent {
+        background: transparent !important;
+    }
+    .bg-secondary-background, .achievement-modal-container {
+        background-color: transparent !important;
+    }
+    .button-secondary {
+        --button-color-background-default: hsla(0,0%,100%,.08) !important;
+        --button-color-background-hover: rgba(35, 33, 54, 0.5) !important;
+        --button-color-background-active: rgba(35, 33, 54, 0.8) !important;
+    }
+    .button.button-activated {  
+        --button-color-background: rgba(35, 33, 54, 0.8) !important;
+    }
+    .bg-tone-4 {
+        background-color: #ea9a9766 !important;
+    }
+    .theme-dark .notification-item.unread-notification {
+        background-color: hsla(0,0%,100%,.08) !important;
+        border-radius: 0.5rem !important;
+    }
+    .theme-dark .notification-item:hover, .theme-dark .notification-item.unread-notification:hover {
+        background-color: rgba(234, 154, 151, 0.3) !important;
+        border-radius: 0.5rem !important;
+    }
+    
+    .achievement-modal, .reddit-search-bar .label-container, faceplate-menu{
+        background-color: rgba(35, 33, 54, 0.8) !important;
+        backdrop-filter: blur(20px);
+    }
+    .bg-neutral-background-container, .label-container-hover {
+        background-color: hsla(0,0%,100%,.08) !important;
+    }
+    #reddit-trending-searches-partial-container, .ml-md.mt-sm.mb-2xs.text-neutral-content-weak.flex.items-center {
+        display: none !important;
+    }
+    :root:not(.theme-light) .theme-rpl, :root:not(.theme-light).theme-rpl {
+        --color-neutral-background-hover: hsla(0,0%,100%,.08) !important;
+    }
+    .text-global-black {
+        color: #e0def4 !important;
+    }
+}

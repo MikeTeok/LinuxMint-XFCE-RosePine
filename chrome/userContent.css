@@ -1,6 +1,7 @@
 @import "./includes/youtube.css";
 @import "./includes/google.css";
 @import "./includes/chatgpt.css";
+@import "./includes/reddit.css";
 :root {
     --background-color: rgba(35, 33, 54, 0.5);
 }
@@ -34,29 +35,6 @@
 } 
 
 
-@-moz-document domain(reddit.com) {
-    header {
-        background-color: rgba(255,255,255,.5) !important;
-        backdrop-filter: blur(20px);
-    }    
-    body, html, .bg-neutral-background, .threadline, reddit-sidebar-nav, shreddit-post, aside, .reddit-search-bar, comment-body-header, shreddit-comment-tree{
-        background-color: transparent !important;
-    }
-}
-
-@-moz-document domain(reddit.com) {
-    header {
-        background-color: rgba(255,255,255,.5) !important;
-        backdrop-filter: blur(20px);
-    }    
-    body, html, reddit-sidebar-nav, shreddit-post, aside, .reddit-search-bar{
-        background-color: transparent !important;
-    }
-    .left-sidebar {
-        --color-neutral-background: transparent;
-    }
-}
-
 
 
 @-moz-document domain(github.com) {
@@ -64,6 +42,7 @@
     body, html, header, #repository-container-header, .bgColor-muted, section{
         background-color: transparent !important;
     }
+    
 }
 
 
