@@ -7,10 +7,9 @@ Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
 # Gallery  
 ![Desktop](https://github.com/user-attachments/assets/fdf88d04-49ec-4234-a436-d9dacde22179)
 ![Desktop_w_startmenu](https://github.com/user-attachments/assets/fba8c2da-6c33-4f96-8cae-1910d7f6a019)
-![youtube](https://github.com/user-attachments/assets/7895d73e-3b1c-46d5-84e6-cdc2bd4a7b3b)
+![youtube new style](https://github.com/user-attachments/assets/0c73f897-68ac-433d-aebb-f6a288fdae8e)
 ![chatgpt](https://github.com/user-attachments/assets/ff0d98df-5c15-4c80-9b51-1ebcd94c0e44)
-
-
+![newtab](https://github.com/user-attachments/assets/935447d2-c376-4ccf-b50d-adbd16f0c1f4)
 
 Todo-list:
 1. ~~neofetch theme~~
