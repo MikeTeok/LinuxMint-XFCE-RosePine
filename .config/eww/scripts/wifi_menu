@@ -40,7 +40,11 @@ refresh() {
 
 connect() {
     refresh &
-    nmcli device wifi connect "$1" password "$2"
+    if [ "$2" = "known" ]; then
+        nmcli connection up "$1"
+    else
+        nmcli device wifi connect "$1" password "$2"
+    fi
     wifi_list
 }
 
@@ -54,6 +58,7 @@ wifi_list() {
 
     # Capture SSID and BARS into an array
     mapfile -t wifi_list < <(nmcli -t -f IN-USE,SSID,BARS,BSSID device wifi list | sed 's/\\://g' )
+    mapfile -t known_wifi_list < <(nmcli -t -f NAME connection show)
 
     # Loop through each Wi-Fi network found
     for wifi in "${wifi_list[@]}"; do
@@ -64,16 +69,25 @@ wifi_list() {
         connect="Connect"
         class="wifi-item"
         connect_action="\"scripts/wifi_menu connect \\\"$ssid\\\" \\\"\${password_l}\\\"\""
+        got_password=true
 
         # Print SSID and signal strength
         if [ -z "$ssid" ]; then
             continue
         fi
         
+        for known_wifi in "${known_wifi_list[@]}"; do
+            if [ "$ssid" = "$known_wifi" ]; then
+                connect_action="\"scripts/wifi_menu connect \\\"$ssid\\\" \\\"known\\\"\""
+                got_password=false
+            fi
+        done
+        
         if [ -n "$inuse" ]; then
             class="wifi-item-enabled"
             connect="Disconnect"
             connect_action="\"nmcli connection down \\\"$ssid\\\" ; scripts/wifi_menu list\""
+            got_password=false
         fi
         
         buf="$buf 
@@ -85,7 +99,7 @@ wifi_list() {
         (label :hexpand true :halign \"end\" :text \"$bars\"))) 
         (revealer :transition \"slideup\" :reveal {selected_wifi==\"$bssid\"} 
         (box :orientation \"h\" :hexpand true :space-evenly false :spacing 10 
-        (input :class \"password_box\" :hexpand true :password true :onchange \"eww update password_l={}\" :onaccept $connect_action :value \"\")
+        (input :class \"password_box_$got_password\" :active $got_password :hexpand true :password true :onchange \"eww update password_l={}\" :onaccept $connect_action :value \"\")
         (button :class \"connect_button\" :vexpand true :hexpand true :halign \"end\" :onclick $connect_action \"$connect\")))))"
     done
     

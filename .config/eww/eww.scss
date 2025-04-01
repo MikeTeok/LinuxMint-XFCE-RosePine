@@ -228,8 +228,14 @@ $highlight-high: #56526e;
 .wifi-refresh:hover {background-color:mix($rose, $subtle, 20%);}
 .wifi-refresh:active {background-color:mix($rose, $subtle, 99%);}
 
-.password_box {
+.password_box_true {
     background-color:rgba(35, 33, 54, 0.4);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.password_box_false {
+    background-color:transparent;
     padding: 0.5rem 0.5rem;
     border-radius: 0.5rem;
 }

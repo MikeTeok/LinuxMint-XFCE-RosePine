@@ -55,10 +55,10 @@ menupopup, panel  {
 .titlebar-buttonbox{
   flex-direction: row-reverse;
 }
-/*
+
 #tabbrowser-tabpanels {
   & browser[type="content"] {
     border-radius: 0.8rem !important;
     margin: 10px !important;
     box-shadow: 0 0 10px 1px #00000080;
-  }*/
+  }

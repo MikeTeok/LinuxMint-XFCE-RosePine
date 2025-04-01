@@ -67,9 +67,38 @@
         flex-direction: column !important;
         align-items: center !important;
     }
-    @media (min-width: 1698px) {
-        .layout-variant-a .ds-outer-wrapper-breakpoint-override main .body-wrapper, .layout-variant-b .ds-outer-wrapper-breakpoint-override main .body-wrapper {
-            width: auto !important;
+
+    .layout-variant-a .ds-outer-wrapper-breakpoint-override main .body-wrapper, .layout-variant-b .ds-outer-wrapper-breakpoint-override main .body-wrapper {
+        width: auto !important;
+    }
+    @media (min-width: 600px) {
+        .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+    }
+    @media (min-width: 800px) {
+        .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(4, 1fr) !important;
+        }
+    }
+    @media (min-width: 1120px) {
+        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(5, 1fr) !important;;
+        }
+    }
+    @media (min-width: 1330px) {
+        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(6, 1fr) !important;;
+        }
+    }
+    @media (min-width: 1440px) {
+        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(7, 1fr) !important;;
+        }
+    }
+    @media (min-width: 1580px) {
+        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+            grid-template-columns: repeat(8, 1fr) !important;;
         }
     }
     .top-site-outer .context-menu-button {
@@ -109,6 +138,14 @@
     }
     .top-site-button[href*="https://www.chess.com"] .top-site-icon.rich-icon{
         background-image: url("../icons/chess.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://chatgpt.com/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/chatgpt.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://www.yifan.tv/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/yifan.png") !important;
         background-size: cover !important;
     }
     .top-site-button .top-site-icon.default-icon{
