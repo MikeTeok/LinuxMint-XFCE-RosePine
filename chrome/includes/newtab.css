@@ -1,0 +1,111 @@
+@-moz-document url(about:newtab), url("about:home") { 
+    :root {
+        --size-item-large: 64px !important;
+    }
+    html{ 
+        --newtab-background-color: transparent !important; 
+        --newtab-background-color-secondary: transparent !important; 
+    } 
+    .search-wrapper .search-handoff-button {
+        background-color: hsla(0,0%,100%,.08) !important;
+        border-radius: 0.9rem !important;
+    }
+    .search-wrapper.fake-focus:not(search.disabled) .search-handoff-button {
+        border: 1px solid rgb(234, 154, 151) !important;
+        box-shadow: none !important;
+    }
+    .context-menu, .edit-topsites-wrapper .modal {
+        background-color: rgba(35, 33, 54, 0.7) !important;
+        backdrop-filter: blur(20px) !important; 
+    }
+    .top-site-outer:hover {
+        background-color: transparent !important;
+    }
+    .top-site-outer .tile {
+        border-radius: 1rem !important;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+        background-color: hsla(0,0%,100%,.08) !important;
+        position: absolute !important;
+    }
+    .layout-variant-b .top-site-outer .tile{
+        transition: transform 100ms ease, border 100ms ease;
+    }
+    .layout-variant-b .top-site-outer .tile:hover {
+        transform: scale(1.1);
+        border: 1px solid rgb(234, 154, 151) !important;
+    }
+    .top-site-outer .top-site-inner > a {
+        padding: 0px !important;
+    }
+    .top-site-outer .title {
+        z-index: -1 !important;
+    }
+    .top-sites-list .top-site-outer .title .title-label {
+        margin-top: 100px !important;
+        padding-top: 45px !important;
+    }
+    .icon.icon-pin-small, .logo-and-wordmark .wordmark, .layout-variant-a .search-wrapper .search-inner-wrapper, .layout-variant-b .search-wrapper .search-inner-wrapper {
+        display: none !important;
+    }
+    .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+        row-gap: 0px !important;
+    }
+    .logo-and-wordmark .logo {
+        display: none !important;
+    }
+    .layout-variant-a.no-recommended-stories .logo-and-wordmark, .layout-variant-b.no-recommended-stories .logo-and-wordmark {
+        margin-block-end: 0px !important;
+        --size-item-large: 64px !important;
+    }
+    main {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    @media (min-width: 1698px) {
+        .layout-variant-a .ds-outer-wrapper-breakpoint-override main .body-wrapper, .layout-variant-b .ds-outer-wrapper-breakpoint-override main .body-wrapper {
+            width: auto !important;
+        }
+    }
+    .top-site-button[href*="http://www.youtube.com"] .top-site-icon.rich-icon{
+        background-image: url("../icons/youtube.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="http://www.reddit.com"] .top-site-icon.rich-icon{
+        background-image: url("../icons/reddit.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="http://www.github.com"] .top-site-icon.rich-icon{
+        background-image: url("../icons/github.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://web.whatsapp.com/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/whatsapp.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://www.facebook.com/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/facebook.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://www.messenger.com/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/messenger.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://www.google.com"] .top-site-icon.rich-icon{
+        background-image: url("../icons/google.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://music.youtube.com/"] .top-site-icon.rich-icon{
+        background-image: url("../icons/youtube-music.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://www.chess.com"] .top-site-icon.rich-icon{
+        background-image: url("../icons/chess.png") !important;
+        background-size: cover !important;
+    }
+    .top-site-button[href*="https://docs.google.com/spreadsheets/u/0/"] .top-site-icon.default-icon{
+        background-image: url("../icons/sheets.png") !important;
+        background-size: 64px !important;
+        height: 64px !important;
+        width: 64px !important;
+    }
+} 
