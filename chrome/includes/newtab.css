@@ -1,6 +1,7 @@
 @-moz-document url(about:newtab), url("about:home") { 
     :root {
         --size-item-large: 64px !important;
+        --color-accent-primary: transparent !important;
     }
     html{ 
         --newtab-background-color: transparent !important; 
@@ -32,7 +33,12 @@
     }
     .layout-variant-b .top-site-outer .tile:hover {
         transform: scale(1.1);
-        border: 1px solid rgb(234, 154, 151) !important;
+        border: 1px solid #9ccfd8 !important;
+    }
+    .layout-variant-b .top-site-outer .tile:active {
+        border: 10px solid #9ccfd8 !important;
+        border-radius: 2rem !important;
+        outline: none !important;
     }
     .top-site-outer .top-site-inner > a {
         padding: 0px !important;
@@ -65,6 +71,9 @@
         .layout-variant-a .ds-outer-wrapper-breakpoint-override main .body-wrapper, .layout-variant-b .ds-outer-wrapper-breakpoint-override main .body-wrapper {
             width: auto !important;
         }
+    }
+    .top-site-outer .context-menu-button {
+        background-color: transparent !important;
     }
     .top-site-button[href*="http://www.youtube.com"] .top-site-icon.rich-icon{
         background-image: url("../icons/youtube.png") !important;
@@ -102,10 +111,21 @@
         background-image: url("../icons/chess.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="https://docs.google.com/spreadsheets/u/0/"] .top-site-icon.default-icon{
-        background-image: url("../icons/sheets.png") !important;
+    .top-site-button .top-site-icon.default-icon{
         background-size: 64px !important;
         height: 64px !important;
         width: 64px !important;
+    }
+    .top-site-button[href*="https://docs.google.com/spreadsheets/u/0/"] .top-site-icon.default-icon{
+        background-image: url("../icons/sheets.png") !important;
+    }
+    .top-site-button[href*="https://www.instagram.com/"] .top-site-icon.default-icon{
+        background-image: url("../icons/instagram.png") !important;
+    }
+    .top-site-button[href*="https://mail.google.com/mail/u/0/"] .top-site-icon.default-icon{
+        background-image: url("../icons/gmail.png") !important;
+    }
+    .top-site-button[href*="https://itch.io/"] .top-site-icon.default-icon{
+        background-image: url("../icons/itchio.png") !important;
     }
 } 
