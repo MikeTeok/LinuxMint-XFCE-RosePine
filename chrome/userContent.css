@@ -10,17 +10,24 @@
   background-color: transparent !important;
 }
 
-
-
-
-
-
 @-moz-document domain(github.com) {
 
     body, html, header, #repository-container-header, .bgColor-muted, section{
         background-color: transparent !important;
     }
-    
+}
+
+
+
+
+@-moz-document domain(facebook.com) {
+    body, html, header, #repository-container-header, .bgColor-muted, section{
+        background-color: transparent !important;
+    }
+    .x1ve1bff {
+        background-color: rgba(35, 33, 54, 0.5) !important;
+        backdrop-filter: blur(20px) !important;
+    }
 }
 
 

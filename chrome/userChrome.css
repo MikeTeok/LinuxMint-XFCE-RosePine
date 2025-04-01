@@ -3,17 +3,12 @@
   --tabpanel-background-color: transparent !important;
 }
 
-
-#navigator-toolbox, #nav-bar {
-  background-color: transparent !important;
-  border: none !important;
-}
-
-
 #main-window {
   --lwt-accent-color: transparent !important;
   --toolbar-bgcolor: transparent !important;
   --toolbar-field-background-color:  transparent !important;
+  --lwt-accent-color-inactive: transparent !important;
+  
 }
 
 #urlbar, #urlbar-background, #PopupAutoCompleteRichResult {
@@ -34,31 +29,46 @@
   box-shadow: none !important;
 }
 
-#contentAreaContextMenu {
-  background-color: transparent !important; 
-}
-
 menupopup, panel  {
-    /* To account for the box-shadow below */
     --panel-shadow-margin: 0px !important;
 }
 
+
+#tabbrowser-tabpanels {
+  & browser[type="content"] {
+    border-radius: 0.8rem !important;
+    margin: 1rem !important;
+    margin-left: 0rem !important;
+    margin-top: 0.5rem !important;
+    box-shadow: 0 0 10px 1px #00000080;
+  }
+}
+
+.sidebar-splitter {
+  @media (-moz-bool-pref: "sidebar.revamp") {
+    &:hover {
+      background-color: #3e8fb0 !important;
+    }
+  }
+}
+
+
+#contentAreaContextMenu {
+  background-color: transparent !important; 
+}
 
 :root[tabsintitlebar="true"] #nav-bar{
   border-inline-width: calc(var(--uc-window-control-width,0px) + var(--uc-window-drag-space-post,0px)) var(--uc-window-drag-space-pre,0px)
 }
 :root[sizemode="fullscreen"] #TabsToolbar > .titlebar-buttonbox-container:last-child,
 :root[sizemode="fullscreen"] #window-controls{ right: unset; }
-.titlebar-buttonbox-container{
-  order: -1 !important;
-}
-.titlebar-buttonbox{
-  flex-direction: row-reverse;
+
+
+
+#navigator-toolbox, #nav-bar {
+  background-color: transparent !important;
+  border: none !important;
 }
 
-#tabbrowser-tabpanels {
-  & browser[type="content"] {
-    border-radius: 0.8rem !important;
-    margin: 10px !important;
-    box-shadow: 0 0 10px 1px #00000080;
-  }
+
+
