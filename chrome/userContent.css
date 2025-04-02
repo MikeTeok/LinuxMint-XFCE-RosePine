@@ -3,6 +3,7 @@
 @import "./includes/chatgpt.css";
 @import "./includes/reddit.css";
 @import "./includes/newtab.css";
+@import "./includes/facebook.css";
 :root {
     --background-color: rgba(35, 33, 54, 0.5);
 }
@@ -19,54 +20,6 @@
 
 
 
-
-@-moz-document domain(facebook.com) {
-    body, html, header, #repository-container-header, .bgColor-muted, section{
-        background-color: transparent !important;
-    }
-    .x1ve1bff {
-        background-color: rgba(35, 33, 54, 0.5) !important;
-        backdrop-filter: blur(20px) !important;
-        border-radius: 0.7rem !important;
-    }
-    .x1jx94hy {
-        background-color: hsla(0,0%,100%,.08) !important;
-    }
-    .x6s0dn4.x1jx94hy {
-        background-color: transparent !important;
-    }
-    .xmjcpbm {
-        background-color: rgba(35, 33, 54, 0.5) !important;
-    }
-    .x1h0vfkc {
-        background-color: rgba(35, 33, 54, 0.8) !important;
-        backdrop-filter: blur(10px) !important;
-        border-radius: 0.7rem !important;
-    }
-    .x1mh8g0r.x1jx94hy, .xmy5rp.x1jx94hy{
-        background-color: rgba(35, 33, 54, 0.8) !important;
-        backdrop-filter: blur(10px) !important;
-    }
-    .x2bj2ny  {
-        background-color: transparent !important;
-        border-radius: 0.7rem !important;
-    }
-    .xezm23g {
-        background-color: rgba(35, 33, 54, 0.8) !important;
-        backdrop-filter: blur(10px) !important;
-        border-radius: 0.7rem !important;
-    }
-    .x443n21 {
-        background-color: transparent !important;
-        border-radius: 0.7rem !important;
-    }
-    .xal61yo, .xkhd6sd.x1jx94hy {
-        background-color: transparent !important;
-    }
-    .x3lcxq5 {
-        border-bottom: none !important;
-    }
-}
 
 
 

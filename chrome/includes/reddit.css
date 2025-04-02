@@ -54,6 +54,10 @@
     }
     .bg-tone-4 {
         background-color: #ea9a9766 !important;
+        
+    }
+    .\[\&\>\.threadline\>\*\]\:border-tone-4 > .threadline > * {
+        border-color: #ea9a9766 !important;
     }
     .theme-dark .notification-item.unread-notification {
         background-color: hsla(0,0%,100%,.08) !important;
