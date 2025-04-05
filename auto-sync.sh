@@ -11,3 +11,4 @@ cp ~/.aliases scripts/
 cp -r ~/.config/systemd/ .config/
 cp -r ~/.themes ./
 cp -r ~/.mozilla/firefox/11dd00o9.default-release/chrome/ ./
+cp -r ~/.config/BetterDiscord/themes/ ./.config/BetterDiscord/

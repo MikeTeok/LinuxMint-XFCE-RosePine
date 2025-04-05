@@ -1,0 +1,58 @@
+/**
+ * @name Transparent
+ * @version 2.0.0
+ * @description Transparent v2. Default Discord theme but transparent. Please set Discord to Dark theme!
+ * @author NoobieNoodle89
+ * @website https://github.com/EnderDragonEP/Transparent-Discord-Theme
+ */
+
+ @import url(https://raw.githubusercontent.com/EnderDragonEP/Transparent-Discord-Theme/main/css/source.css);
+
+ :root {
+      /* Change this to whatever you like */
+      --theme-base-color-amount: 12%;
+
+
+      /* Accent Color */
+      /* default: var(--os-accent-color) */
+      /* Discord default accent color: rgb(90, 101, 234) */
+      --accent-color: var(--os-accent-color);
+
+
+      /* background Color */
+      /* default: rgba(0, 0, 0, 0) */
+      --background-color: rgba(0, 0, 0, 0);
+ }
+ @supports (color: color-mix(in lch, red, blue)) and (top: var(--f)) {
+    .visual-refresh.theme-darker, .visual-refresh .theme-darker {
+        --bg-base-secondary: rgba(35, 33, 54, 0.6) !important;
+        --background-tertiary: transparent !important;
+        --bg-base-tertiary: transparent !important;
+        --background-secondary: transparent !important;
+        --background-base-lowest: transparent !important;
+        --background-primary: transparent !important;
+        --background-base-low: hsla(0,0%,100%,.08) !important;
+        --background-base-lower: rgba(35, 33, 54, 0.6) !important;
+        --chat-background-default: hsla(0,0%,100%,.08) !important;
+        --background-surface-higher: hsla(0,0%,100%,.08) !important;
+    }
+    
+}
+.visual-refresh {
+    --custom-channel-members-bg: transparent !important;
+}
+.visual-refresh .appMount__51fd {
+    background: transparent !important;
+}
+
+.visual-refresh body, body.bd-frame.bd-transparency, .members_c8ffbb {
+    background: rgba(35, 33, 54, 0.6) !important;
+}
+
+.visual-refresh .container__37e49 {
+    backdrop-filter: blur(20px) !important;
+}
+
+.artwork_eb4069 {
+    display: none !important;
+}

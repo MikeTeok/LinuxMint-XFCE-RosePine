@@ -11,12 +11,17 @@
   background-color: transparent !important;
 }
 
+html.private {
+    --in-content-page-background: transparent !important;
+}
+
 @-moz-document domain(github.com) {
 
     body, html, header, #repository-container-header, .bgColor-muted, section{
         background-color: transparent !important;
     }
 }
+
 
 
 
