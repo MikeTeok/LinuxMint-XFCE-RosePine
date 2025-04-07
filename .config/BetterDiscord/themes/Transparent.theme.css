@@ -7,7 +7,7 @@
  */
 
  @import url(https://raw.githubusercontent.com/EnderDragonEP/Transparent-Discord-Theme/main/css/source.css);
-
+@import url("https://benji-en.github.io/rose-pine/rose-pine-main.css");
  :root {
       /* Change this to whatever you like */
       --theme-base-color-amount: 12%;
@@ -25,6 +25,7 @@
  }
  @supports (color: color-mix(in lch, red, blue)) and (top: var(--f)) {
     .visual-refresh.theme-darker, .visual-refresh .theme-darker {
+        --background-floating: rgba(35, 33, 54, 0.8) !important;
         --bg-base-secondary: rgba(35, 33, 54, 0.6) !important;
         --background-tertiary: transparent !important;
         --bg-base-tertiary: transparent !important;
@@ -35,6 +36,7 @@
         --background-base-lower: rgba(35, 33, 54, 0.6) !important;
         --chat-background-default: hsla(0,0%,100%,.08) !important;
         --background-surface-higher: hsla(0,0%,100%,.08) !important;
+        --background-surface-high: hsla(0,0%,100%,.08) !important;
     }
     
 }

@@ -15,6 +15,8 @@ menu {
   color: rgba(250, 244, 237, 0.7);
 }
 
+.background.csd { box-shadow: none; }
+
 /********************
        General
 *******************/
@@ -110,4 +112,22 @@ window#whiskermenu-window scrolledwindow.frame treeview.view:focus {
   background-color: rgba(250, 244, 237, 0.12);
   color: #faf4ed;
 }
+
+/********************
+       blueman
+*******************/
+
+#ManagerDeviceList {background-color: transparent;}
+#ManagerDeviceList:hover {background-color: rgba(250, 244, 237, 0.1);}
+#ManagerDeviceList {color: #fff;}
+#ManagerDeviceList:selected {
+background-color:  rgba(156, 207, 216, 0.5);
+}
+
+/********************
+       calculator
+*******************/
+.sourceview.view {background-color: rgba(35, 33, 54, 0);}
+
+
 
