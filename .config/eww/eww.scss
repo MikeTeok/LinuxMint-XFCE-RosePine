@@ -263,6 +263,7 @@ $highlight-high: #56526e;
   color: $love;
   font-size: 18px;
   padding-top: 2px;
+  padding-right: 0.5rem;
 }
 
 .logout label{
@@ -280,3 +281,16 @@ $highlight-high: #56526e;
   color: $subtle;
 }
 
+/********************
+     bluetooth
+********************/
+.bluetooth-icon label{
+  color: $pine;
+  font-size: 20px;
+  padding: 0 0.5rem;
+  padding-right: 0.8rem;
+}
+
+.bluetooth-icon:hover label{
+  color: $subtle;
+}

@@ -1,0 +1,10 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;                 BLUETOOTH
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwidget bluetooth []
+	(box		:orientation "h"  
+	(button		:onclick "blueman-manager" 
+				:class "bluetooth-icon" "󰂯")))

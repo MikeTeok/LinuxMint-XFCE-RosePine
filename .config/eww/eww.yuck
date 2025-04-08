@@ -12,6 +12,8 @@
 (include "modules/wifi.yuck")
 
 (include "modules/power.yuck")
+
+(include "modules/bluetooth.yuck")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 Combined
@@ -27,7 +29,8 @@
 (defvar wifi_reveal_top true)
 (defvar power_reveal_top true)
 (defwidget sidestuff []
-  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "center"
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "start"
+    (bluetooth)
     (revealer :transition "slideright" 
               :reveal volume_reveal_top
     (volume))
