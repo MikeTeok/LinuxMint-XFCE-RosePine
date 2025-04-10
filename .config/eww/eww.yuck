@@ -29,17 +29,11 @@
 (defvar wifi_reveal_top true)
 (defvar power_reveal_top true)
 (defwidget sidestuff []
-  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "start"
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (bluetooth)
-    (revealer :transition "slideright" 
-              :reveal volume_reveal_top
-    (volume))
-    (revealer :transition "slideright" 
-              :reveal wifi_reveal_top
-    (wifi))
-    (revealer :transition "slideright" 
-              :reveal power_reveal_top
-    (power))
+    (volume)
+    (wifi)
+    (power)
     ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

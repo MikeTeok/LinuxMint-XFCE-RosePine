@@ -1,0 +1,12 @@
+#!/bin/bash
+
+adjust_size() {
+    end=$((SECONDS + 2))  # Run for 2 seconds
+    while [ $SECONDS -lt $end ]; do
+        sleep 0.01
+        wmctrl -r "Eww - powerbar" -e 0,-1,-1,1,1
+    done
+}
+#adjust_size
+sleep 0.32
+wmctrl -r "Eww - powerbar" -e 0,-1,-1,1,1

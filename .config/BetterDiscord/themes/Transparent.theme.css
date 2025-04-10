@@ -58,3 +58,8 @@
 .artwork_eb4069 {
     display: none !important;
 }
+
+.accountProfilePopoutWrapper__37e49 {
+    background: rgba(35, 33, 54, 0.8);
+    backdrop-filter: blur(10px);
+}
