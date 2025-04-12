@@ -15,8 +15,8 @@
   (box :orientation "h"
        :class "volume"
        :space-evenly false
-    (eventbox :onhover "${EWW_CMD} update vol_reveal=true"
-              :onhoverlost "${EWW_CMD} update vol_reveal=false; scripts/window_shrink"
+    (eventbox :onhover "${EWW_CMD} update vol_reveal=true; scripts/window_shrink 160"
+              :onhoverlost "${EWW_CMD} update vol_reveal=false; scripts/window_shrink 110"
     (box :space-evenly false
     (button :class "label" 
             :onclick "scripts/volume"

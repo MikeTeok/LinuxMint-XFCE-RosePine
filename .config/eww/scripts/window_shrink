@@ -1,12 +1,68 @@
 #!/bin/bash
 
-adjust_size() {
-    end=$((SECONDS + 2))  # Run for 2 seconds
-    while [ $SECONDS -lt $end ]; do
-        sleep 0.01
-        wmctrl -r "Eww - powerbar" -e 0,-1,-1,1,1
+LOCK_FILE="$HOME/.cache/eww-powerbg.lock"
+
+window_resize() {
+    echo $$ > "$LOCK_FILE"
+    # Parameters
+    steps=40              # Number of animation steps
+    duration=0.1          # Total animation time in seconds
+    window_name="Eww - powerbar_bg"  # Window title to target
+
+    # Find window ID by name
+    win_id=$(xdotool search --name "$window_name" | head -n 1)
+
+    if [ -z "$win_id" ]; then
+        echo "Window \"$window_name\" not found."
+        exit 1
+    fi
+
+    # Target size
+    target_width=$1
+    target_height=1
+
+    # Get current window geometry
+    eval $(xdotool getwindowgeometry --shell "$win_id")
+    start_x=$X
+    start_y=$Y
+    start_width=$WIDTH
+    start_height=$HEIGHT
+
+    # Compute deltas
+    delta_w=$((target_width - start_width))
+    delta_h=$((target_height - start_height))
+
+    # Ease-out cubic curve: f(t) = 1 - (1 - t)^3
+    ease_out_cubic() {
+        t=$1
+        echo "scale=6; 1 - (1 - $t)^8" | bc -l
+    }
+
+    # Animate
+    for ((i=1; i<=steps; i++)); do
+        t=$(echo "scale=4; $i / $steps" | bc -l)
+        progress=$(ease_out_cubic "$t")
+
+        w=$(echo "$start_width + $delta_w * $progress" | bc -l)
+        h=$(echo "$start_height + $delta_h * $progress" | bc -l)
+
+        w=${w%.*}
+        h=${h%.*}
+
+        wmctrl -ir "$win_id" -e 0,-1,-1,$w,1
+        sleep $(echo "$duration / $steps" | bc -l)
     done
+    rm -f "$LOCK_FILE"
 }
-#adjust_size
-sleep 0.32
-wmctrl -r "Eww - powerbar" -e 0,-1,-1,1,1
+
+#sleep 0.1
+if [[ -f "$LOCK_FILE" ]]; then
+    old_pid=$(cat "$LOCK_FILE")
+    if kill -0 "$old_pid" 2>/dev/null; then
+        kill "$old_pid"
+    fi
+fi
+
+
+window_resize $1
+    

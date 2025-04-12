@@ -8,8 +8,8 @@
   (box :orientation "h"
        :class "power"
        :space-evenly false
-    (eventbox :onhover "${EWW_CMD} update power_reveal=true"
-              :onhoverlost "${EWW_CMD} update power_reveal=false; scripts/window_shrink"
+    (eventbox :onhover "${EWW_CMD} update power_reveal=true; scripts/window_shrink 160"
+              :onhoverlost "${EWW_CMD} update power_reveal=false; scripts/window_shrink 110"
     (box :space-evenly false
          :hexpand true
     (revealer :transition "slideleft" 

@@ -67,6 +67,19 @@
   :reserve (struts :side "top" :distance "4%")
   (sidestuff))
 
+(defwindow powerbar_bg
+  :monitor 0
+  :windowtype "dock"
+  :stacking "bg"
+  :exclusive true
+  :geometry (geometry :x "-0.5%"
+                      :y "0.5%"
+                      :width "110px"
+                      :height "3%"
+                      :anchor "top right")
+  :reserve (struts :side "top" :distance "4%")
+  " ")
+
 (defwindow workspacebar
   :monitor 0
   :windowtype "dock"
