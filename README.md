@@ -4,6 +4,11 @@ A rice for my personal LinuxMint XFCE Version
 the code is very smelly, please dont mind.  
 Read [Wiki](https://github.com/MikeTeok/LinuxMint-XFCE-RosePine/wiki)
 
+Read 12 Apr Dev log: Added powerbar window expand shrink animation   
+but with some artifact when spamming hover event  
+![out](https://github.com/user-attachments/assets/2ab489ed-f6de-46ca-ae9e-e84bbeb9e449)
+
+
 # Gallery  
 ![Desktop](https://github.com/user-attachments/assets/fdf88d04-49ec-4234-a436-d9dacde22179)
 ![Desktop_w_startmenu](https://github.com/user-attachments/assets/fba8c2da-6c33-4f96-8cae-1910d7f6a019)
