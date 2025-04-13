@@ -1,0 +1,37 @@
+#!/bin/sh
+
+thumbnail() {
+    duration
+    playerctl metadata mpris:artUrl | cut -c8-
+}
+
+playtime() {
+    playerctl position
+}
+
+duration() {
+    status=$(playerctl metadata mpris:length | awk '{printf "%.0f\n", $1 / 1000000}')
+    eww update duration="$status"
+}
+
+control() {
+    # Get the number of workspaces in Xfce
+    LOCK_FILE="$HOME/.cache/eww-music-ctrl.lock"
+
+    # Open widgets
+    if [ ! -f "$LOCK_FILE" ]; then
+        /usr/local/bin/eww -c ~/.config/eww open music_ctrl
+        sleep 0.5
+        touch $LOCK_FILE
+    else
+        eww close music_ctrl
+        rm "$LOCK_FILE"
+        exit
+    fi
+}
+
+[ "$1" = "thumbnail" ] && thumbnail && exit
+[ "$1" = "playtime" ] && playtime && exit
+[ "$1" = "duration" ] && duration && exit
+[ "$1" = "control" ] && control && exit
+

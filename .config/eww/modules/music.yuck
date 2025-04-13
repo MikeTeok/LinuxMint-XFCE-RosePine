@@ -23,10 +23,54 @@
   (button :class "next" 
           :onclick "playerctl next"
           "󰒭")
-  (box :class "music_label"
-       :orientation "h"
-       :space-evenly false
+  (button :class "music_label"
+          :onclick "scripts/music_control control"
     {music_l != "" ? "${music_l}" : ""})))
 
 (deflisten music_l :initial ""
   "scripts/music")
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;               Music control
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defpoll thumbnail :interval "3s" "scripts/music_control thumbnail")
+(defpoll playtime :interval "1s" "scripts/music_control playtime")
+(defvar duration 20500)
+
+(defwidget music_c []
+  (box :orientation "h" :space-evenly false :halign "center"
+    (image :class "music_thumbnail"
+        :path thumbnail
+        :image-height 100
+        :halign "center")
+    (box :class "music_vbox"
+       :orientation "v"
+       :space-evenly false
+       :valign "center"
+       (label :class "music_label" :text {music_l != "" ? "${music_l}" : ""})
+        (box :class "music_hbox"
+           :orientation "h"
+           :space-evenly false
+           :halign "center"
+          (button :class "previous" 
+                  :onclick "playerctl previous"
+                  "󰒮")
+          (button :class "play" 
+                  :onclick "playerctl play-pause;scripts/music_icon"
+                  music_icon)
+          (button :class "stop" 
+                  :onclick "playerctl stop"
+                  "")
+          (button :class "next" 
+                  :onclick "playerctl next"
+                  "󰒭"))
+        (scale 
+            :min 0 
+            :max duration 
+            :value playtime 
+            :orientation "h"
+            :active true
+            :onchange "playerctl position {}")
+    )))

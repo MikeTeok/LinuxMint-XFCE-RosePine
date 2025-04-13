@@ -28,6 +28,7 @@ html.private {
         background-color: transparent !important;
     }
     .__fb-dark-mode {
+        --chat-outgoing-message-background-gradient: #3e8fb05 !important;
         --card-background: transparent !important;
         --chat-incoming-message-bubble-background-color: #303030 !important;
         --comment-background: #ffffff20 !important;

@@ -72,7 +72,7 @@ $highlight-high: #56526e;
 .music_box {
   padding: 0px 1rem;
 }
-.music_box * {
+.music_box *, .music_vbox * {
   padding: 0px 3px;
 }
 
@@ -112,7 +112,7 @@ $highlight-high: #56526e;
   padding-right: 1rem;
 }
 
-.volume scale trough {
+.volume scale trough{
   all: unset;
   background-color: #6e6e6e;
   border-radius: 50px;
@@ -294,3 +294,33 @@ $highlight-high: #56526e;
 .bluetooth-icon:hover label{
   color: $subtle;
 }
+
+
+/********************
+  Music controller
+********************/
+.music_vbox scale trough highlight {
+  background-color: $pine;
+  color: #000000;
+  border-radius: 10rem;
+}
+
+.music_vbox scale trough {
+  all: unset;
+  background-color: #6e6e6e;
+  border-radius: 10rem;
+  min-height: 0.5rem;
+  min-width: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.music_hbox button {
+  font-size: 2rem;
+  padding: 0px 1rem;
+}
+
+.music_hbox .previous, .music_hbox .next  {
+  font-size: 3rem;
+}
+
