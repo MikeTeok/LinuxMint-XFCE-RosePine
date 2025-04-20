@@ -4,6 +4,9 @@
 @import "./includes/reddit.css";
 @import "./includes/newtab.css";
 @import "./includes/facebook.css";
+@import "./includes/github.css";
+@import "./includes/messenger.css";
+@import "./includes/instagram.css";
 :root {
     --background-color: rgba(35, 33, 54, 0.5);
 }
@@ -15,49 +18,7 @@ html.private {
     --in-content-page-background: transparent !important;
 }
 
-@-moz-document domain(github.com) {
 
-    body, html, header, #repository-container-header, .bgColor-muted, section{
-        background-color: transparent !important;
-    }
-}
-
-@-moz-document domain(messenger.com) {
-
-    body, html, header, #repository-container-header, .bgColor-muted, section{
-        background-color: transparent !important;
-    }
-    .__fb-dark-mode {
-        --chat-outgoing-message-background-gradient: #3e8fb05 !important;
-        --card-background: transparent !important;
-        --chat-incoming-message-bubble-background-color: #303030 !important;
-        --comment-background: #ffffff20 !important;
-        --messenger-card-background: transparent !important;
-        --chat-outgoing-message-bubble-background-color: #3e8fb050 !important;
-        --chat-composer-background-color: transparent !important;
-    }
-    .xcrg951, .xfpmyvw {
-        background-color: transparent !important;
-        border: 1px solid #ffffff20 !important;
-    }
-    .xfpmyvw {
-        box-shadow: none !important;
-    }
-    .x1uipg7g {
-        border-right-color: transparent !important;
-    }
-    .x9f619.x1ja2u2z.__fb-dark-mode.x1xsqp64.x18d0r48.x78zum5.x1r8uery.xdt5ytf.x1iyjqo2.xmz0i5r.x6ikm8r.x10wlt62.x1n2onr6 {
-        background-image: none !important;
-    }
-    
-    .x1xr0vuk {
-        background-color: #c4a7e740 !important;
-    }
-    
-    .x1jx94hy {
-        background-color: #ffffff20 !important;
-    }
-}
 
 
 

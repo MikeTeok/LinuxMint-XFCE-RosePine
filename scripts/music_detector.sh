@@ -1,4 +1,5 @@
 #!/bin/bash
+LOCK_FILE="$HOME/.cache/eww-music-ctrl.lock"
 
 playerctl --follow status | while read status; do
     if [ "$status" = "Playing" ]; then
@@ -7,6 +8,11 @@ playerctl --follow status | while read status; do
         echo ""
     else
         eww close musicbar
+        
+        if [ -f "$LOCK_FILE" ]; then
+            eww close music_ctrl
+            rm "$LOCK_FILE"
+        fi
     fi
 done
 

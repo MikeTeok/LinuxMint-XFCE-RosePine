@@ -134,5 +134,9 @@ background-color:  rgba(156, 207, 216, 0.5);
 *******************/
 .background.powerbar {background-color: transparent;}
 
+/********************
+       Setting
+*******************/
+.exoiconview.view, .exoiconview.view .view {background-color: transparent; }
 
 

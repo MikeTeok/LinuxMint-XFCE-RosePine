@@ -1,0 +1,23 @@
+
+@-moz-document domain(github.com) {
+
+    body, html, header, #repository-container-header, .bgColor-muted, section{
+        background-color: transparent !important;
+    }
+    .color-bg-default, .bgColor-default, html[data-color-mode="dark"] .feed-background, .color-bg-subtle, .bgColor-muted, .input-contrast, .prc-components-TextInputBaseWrapper-ueK9q, .Box-header, .filter-bar, .form-control, .form-select, .Metadata-module__container--tL6Q3, .Button--secondary.Button--medium.Button, .FormControl-input, .FormControl-select, .FormControl-textarea, .drag-and-drop{
+      background-color: transparent !important;
+    }
+     .feed-item-content, .input-contrast:focus, .btn, .ajax-pagination-form .ajax-pagination-btn, .prc-Button-ButtonBase-c50BI:where([data-variant="default"]), .react-directory-row:hover, .tabnav-tab.selected, .tabnav-tab[aria-current]:not([aria-current="false"]), .tabnav-tab[aria-selected="true"], .Button--secondary, .Button--danger {
+        background-color: #ffffff10 !important;
+    }
+    .copilotPreview, .copilotPreview-disabled, .dJnomT, .gh-header, .Box, .btn.btn-octicon, .FilterInputWrapper-module__Box_1--vewob {
+        background: transparent !important;
+    }
+    .btn:hover, .prc-Button-ButtonBase-c50BI:where([data-variant="default"]):hover, .Button--secondary.Button--medium.Button:hover, .Button--secondary:hover, .Button--danger:hover  {
+        background-color: #ea9a9740 !important;
+    }
+    .Overlay, .prc-Dialog-Dialog-luvDS {
+        background: #232136d0 !important;
+        backdrop-filter: blur(20px) !important;
+    }
+}
