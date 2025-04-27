@@ -26,6 +26,9 @@
         background-color: rgba(35, 33, 54, 0.8) !important;
         backdrop-filter: blur(20px) !important;
     }
+    #frosted-glass.with-chipbar.ytd-app {
+    background: transparent !important;
+    }
     /*
     * {
         isolation: isolate;
