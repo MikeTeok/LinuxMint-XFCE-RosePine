@@ -46,12 +46,19 @@
     .top-site-outer .title {
         z-index: -1 !important;
     }
+    .shortcuts-refresh .top-site-outer{
+          width: 170px !important;
+    }
     .top-sites-list .top-site-outer .title .title-label {
         margin-top: 100px !important;
         padding-top: 45px !important;
     }
     .icon.icon-pin-small, .logo-and-wordmark .wordmark, .layout-variant-a .search-wrapper .search-inner-wrapper, .layout-variant-b .search-wrapper .search-inner-wrapper {
         display: none !important;
+    }
+    .context-menu-button.icon {
+        padding-left: 4rem !important;
+        padding-top: 2rem !important;
     }
     .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
         row-gap: 0px !important;
@@ -148,21 +155,25 @@
         background-image: url("../icons/yifan.png") !important;
         background-size: cover !important;
     }
-    .top-site-button .top-site-icon.default-icon{
-        background-size: 64px !important;
+    .top-site-button .top-site-icon.rich-icon, .top-site-button .top-site-icon.default-icon, .shortcuts-refresh .top-site-outer .tile .icon-wrapper{
+        /*background-size: 64px !important;*/
         height: 64px !important;
         width: 64px !important;
     }
     .top-site-button[href*="https://docs.google.com/spreadsheets/u/0/"] .top-site-icon.default-icon{
         background-image: url("../icons/sheets.png") !important;
+        background-size: cover !important;
     }
     .top-site-button[href*="https://www.instagram.com/"] .top-site-icon.default-icon{
         background-image: url("../icons/instagram.png") !important;
+        background-size: cover !important;
     }
     .top-site-button[href*="https://mail.google.com/mail/u/0/"] .top-site-icon.default-icon{
         background-image: url("../icons/gmail.png") !important;
+        background-size: cover !important;
     }
     .top-site-button[href*="https://itch.io/"] .top-site-icon.default-icon{
         background-image: url("../icons/itchio.png") !important;
+        background-size: cover !important;
     }
 } 
