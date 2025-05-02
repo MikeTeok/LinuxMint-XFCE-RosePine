@@ -24,19 +24,19 @@ Todo-list:
 2. ~~install fish~~
 3. ~~install oh my posh~~
 7. ~~eww bar music control~~
-8. eww widget
-9. ~~plank~~
-10. ~~text editor (gedit)~~
-11. ~~tiling manager~~
-12. Customize FirefoxCSS
-13. ~~eww bar wifi menu~~
-14. ~~eww bar separated~~
-15. ~~eww volume popup~~
-16. ~~start menu (whiskermenu)~~
-17. lightdm custom
-18. ~~input method (chinese/korean)xfcit5~~
+8. ~~plank~~
+9. ~~text editor (gedit)~~
+10. ~~tiling manager~~
+11. ~~Customize FirefoxCSS~~
+12. ~~eww bar wifi menu~~
+13. ~~eww bar separated~~
+14. ~~eww volume popup~~
+15. ~~start menu (whiskermenu)~~
+16. ~~lightdm custom~~
+17. ~~input method (chinese/korean)xfcit5~~
 
 ZBB item:  
 1. ~~terminal menubar customization~~ (dropped)
 2. ~~wobbly window~~ (not compatible)
 3. ~~install edge~~ (zbb, use firefox)
+4. ~~eww widget (zbb no use case)~~
