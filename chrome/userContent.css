@@ -19,8 +19,45 @@ html.private {
 }
 
 
-
-
+@-moz-document domain(web.whatsapp.com) {
+    .dark {
+        --panel-background-lighter: transparent !important;
+        --background-default: transparent !important;
+        --search-container-background: transparent !important;
+        --filters-container-background: transparent !important;
+        --navbar-background: transparent !important;
+        --app-background: transparent !important;
+        --WDS-app-wash: transparent !important;
+        --intro-background: transparent !important;
+        --panel-header-background: transparent !important;
+        --conversation-panel-background: transparent !important;
+        --rich-text-panel-background: transparent !important;
+        --compose-input-border: transparent !important;
+        --compose-input-background: #ffffff10 !important;
+        --search-input-container-background: transparent !important;
+        --search-input-background: #ffffff10 !important;
+        --background-default-hover: #ea9a9730 !important;
+        --background-default-active: #9ccfd830 !important;
+        --filters-item-active-background: #3e8fb0f0 !important;
+        --filters-item-active-color: #ffffff !important;
+        --filters-item-background: #9ccfd830 !important;
+        --filters-item-color: #e0def4 !important;
+        --filters-item-background-hover: #6e6a8630 !important;
+        --incoming-background: #2a273fa0 !important;
+        --incoming-background-rgb: #2a273fa0 !important;
+        --outgoing-background: #3e8fb070 !important;
+        --outgoing-background-rgb: #3e8fb070 !important;
+        --dropdown-background: #232136d0 !important;
+        --reactions-panel-background-color: transparent !important;
+        --incoming-background-deeper: #3e8fb040 !important;
+        --outgoing-background-deeper: #2a273f70 !important;
+        --drawer-background-deep: transparent !important;
+        --popup-panel-background: #232136d0 !important;
+    }
+    ._ak4w {
+        backdrop-filter: blur(20px) !important;
+    }
+}
 
 
 

@@ -1,5 +1,8 @@
 
 @-moz-document domain(youtube.com) {
+    ytd-expandable-metadata-renderer[use-custom-colors] {
+        background: hsla(0,0%,100%,.08) !important;
+    }
     #background, #chips-wrapper, ytd-mini-guide-entry-renderer, #background.ytd-masthead  {
         background-color: transparent !important;
         backdrop-filter: blur(20px);
