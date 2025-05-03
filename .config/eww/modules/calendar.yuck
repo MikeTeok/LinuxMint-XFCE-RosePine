@@ -14,6 +14,6 @@
 (defpoll calendar_day :interval "10h"
     "date '+%d'")
 (defpoll calendar_month :interval "10h"
-    "scripts/calendar")
+    "date '+%m'")
 (defpoll calendar_year :interval "10h"
     "date '+%Y'")
