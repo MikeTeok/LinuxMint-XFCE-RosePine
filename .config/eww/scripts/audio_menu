@@ -1,0 +1,71 @@
+#!/bin/bash
+
+menu() {
+    # Get the number of workspaces in Xfce
+    LOCK_FILE="$HOME/.cache/eww-audio.lock"
+
+    # Open widgets
+    if [ ! -f "$LOCK_FILE" ]; then
+        eww open audio_menu
+        sleep 0.5
+        touch $LOCK_FILE
+    else
+        eww close audio_menu
+        rm "$LOCK_FILE"
+        exit
+    fi
+}
+
+should_skip() {
+    local name="$1"
+    for pattern in "${skip_patterns[@]}"; do
+        if [[ "$name" == *"$pattern"* ]]; then
+            return 0  # match found → should skip
+        fi
+    done
+    return 1  # no match → do not skip
+}
+
+get_audio_list() {
+    buf=""
+    skip_patterns=("QuadCast" "Dock" "Built-in")
+    # Read sinks and device names into arrays
+    mapfile -t sinks < <(pactl list sinks | grep -E 'Name:' | cut -d: -f2 | sed 's/^ *//')
+    mapfile -t device_name < <(pactl list sinks | grep -E 'device.description' | cut -d\" -f2)
+    selected_audio=$(pactl info | grep "Default Sink" | cut -d: -f2 | sed 's/^ *//')
+
+    # Declare associative array
+    declare -A sink_map
+
+    # Build dictionary: device description → sink name
+    for i in "${!sinks[@]}"; do
+        if should_skip "${device_name[$i]}"; then
+            continue
+        fi
+        device="${device_name[$i]}"
+        if [[ "${sinks[$i]}" == *"blue"* ]]; then
+            device="${device_name[$i]} BT"
+        fi
+        sink_map["${sinks[$i]}"]="$device"
+    done
+
+    # Print result
+    for key in "${!sink_map[@]}"; do
+        class="audio-item"
+        if [ "$selected_audio" = "$key" ]; then
+            class="audio-item-enabled"
+        fi
+        
+        buf="$buf 
+        
+        (button :class \"$class\" :onclick \"pactl set-default-sink \\\"$key\\\"; scripts/audio_menu list\" :hexpand true 
+        (label :hexpand true :halign \"start\" :text \"${sink_map[$key]}\"))"
+    done
+    eww update audio_list_content="(scroll :hexpand true :class \"audio-scroll\" :hscroll false :vscroll true :height 100 (box :class \"audio-list\" :orientation \"v\" :halign \"start\" :hexpand true :space-evenly false $buf))"
+    
+
+}
+
+[ "$1" = "menu" ] && menu && exit
+#[ "$1" = "connect" ] && connect "$2" "$3" && exit
+[ "$1" = "list" ] && get_audio_list && exit

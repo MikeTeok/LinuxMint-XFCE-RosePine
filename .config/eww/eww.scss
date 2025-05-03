@@ -324,3 +324,38 @@ $highlight-high: #56526e;
   font-size: 3rem;
 }
 
+
+
+.ram-progress {
+    color: #ea9a97;
+    background-color: #393552; 
+    border-radius: 1rem; 
+}
+
+/********************
+  audio menu
+********************/
+
+.audio_menu {
+  padding: 1rem;
+}
+.audio-item, .audio-item-enabled{
+    padding: 5px 10px;
+}
+
+.audio-item, .audio-item-enabled{
+    border-radius: 0.5rem;
+}
+
+.audio-item:hover {
+    background-color: mix(rgba(156, 207, 216, 0.6), $subtle, 50%);;
+}
+
+.audio-item-enabled:hover {
+    background-color: mix(rgba(156, 207, 216, 0.4), $text, 50%);
+}
+
+.audio-item-enabled {
+    background-color: rgba(156, 207, 216, 0.4);
+}
+

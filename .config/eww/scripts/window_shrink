@@ -52,10 +52,11 @@ window_resize() {
         wmctrl -ir "$win_id" -e 0,-1,-1,$w,1
         sleep $(echo "$duration / $steps" | bc -l)
     done
+    sleep 0.3
     rm -f "$LOCK_FILE"
 }
 
-#sleep 0.1
+
 if [[ -f "$LOCK_FILE" ]]; then
     old_pid=$(cat "$LOCK_FILE")
     if kill -0 "$old_pid" 2>/dev/null; then

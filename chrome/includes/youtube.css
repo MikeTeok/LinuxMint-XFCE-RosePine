@@ -32,6 +32,7 @@
     #frosted-glass.with-chipbar.ytd-app {
     background: transparent !important;
     }
+
     /*
     * {
         isolation: isolate;
@@ -39,3 +40,32 @@
 */
 }
 
+@-moz-document domain(music.youtube.com) {
+    html[dark][dark] {
+        --ytmusic-nav-bar: transparent !important;
+        --ytmusic-background: transparent !important;
+        --ytmusic-player-bar-background: rgba(35, 33, 54, 0.3) !important;
+        --ytmusic-brand-background-solid: rgba(35, 33, 54, 0.8) !important;
+    }
+    .ytmusic-fullbleed-thumbnail-renderer {
+        display: none !important;
+    }
+    ytmusic-browse-response[has-background]:not([disable-gradient]) .background-gradient.ytmusic-browse-response  {
+        background-image: none !important;
+    }
+    ytmusic-player-bar.ytmusic-app, tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
+        backdrop-filter: blur(20px) !important;
+    }
+    button.yt-icon-button > yt-icon {
+        color: #ea9a97 !important;
+    }
+    .av-toggle.ytmusic-av-toggle, ytmusic-av-toggle[playback-mode="ATV_PREFERRED"] .song-button.ytmusic-av-toggle, ytmusic-av-toggle[playback-mode="OMV_PREFERRED"] .video-button.ytmusic-av-toggle {
+        background-color: #ffffff10 !important;
+    }
+    .song-button.ytmusic-av-toggle, .video-button.ytmusic-av-toggle {
+        background-color: transparent !important;
+    }
+    tp-yt-paper-listbox.ytmusic-menu-popup-renderer {
+        border-radius: 1rem !important;
+    }
+}

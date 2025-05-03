@@ -15,6 +15,7 @@
 
 (include "modules/bluetooth.yuck")
 
+(include "modules/audio.yuck")
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 Combined
@@ -37,6 +38,21 @@
     (power)
     ))
 
+(defwindow ram
+    :stacking "fg"
+    :windowtype "normal"
+    :geometry (geometry :x "50%" 
+					:y "45%" 
+					:width "100px" 
+					:height "100px")
+    (circular-progress :class "ram-progress" 
+                       :thickness 10 
+                       :clockwise true 
+                       :rounded true
+                       :value 50 
+                       :start-at 75 
+        (label :halign "center" :text "RAM\\n50%"))
+)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;
 ;;                 WINDOW
@@ -113,7 +129,7 @@
     :focusable true
     :windowtype "dialog"
 	:geometry (geometry :anchor "top right"
-	                    :x "-1%"
+	                    :x "-0.5%"
 	                    :y "4.5%"
 						:width "200px" 
 						:height "200px"
@@ -146,3 +162,16 @@
 						:width "50px" 
 						:height "50px")
 (music_c))
+
+;; audio menu Windows ;;
+(defwindow audio_menu
+    :stacking "fg"
+    :focusable true
+    :windowtype "dialog"
+	:geometry (geometry :anchor "top right"
+	                    :x "-0.5%"
+	                    :y "4.5%"
+						:width "100px" 
+						:height "100px"
+						)
+(audio_menu))

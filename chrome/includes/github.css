@@ -1,6 +1,9 @@
 
 @-moz-document domain(github.com) {
-
+    [data-color-mode="dark"][data-dark-theme="dark"] {
+        --bgColor-default: transparent !important;
+        --borderColor-default: #ffffff70 !important;
+    }
     body, html, header, #repository-container-header, .bgColor-muted, section{
         background-color: transparent !important;
     }
@@ -20,4 +23,5 @@
         background: #232136d0 !important;
         backdrop-filter: blur(20px) !important;
     }
+    .TimelineItem::before {width: 0 !important;}
 }

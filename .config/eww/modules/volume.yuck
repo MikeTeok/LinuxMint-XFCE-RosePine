@@ -18,8 +18,9 @@
     (eventbox :onhover "${EWW_CMD} update vol_reveal=true; scripts/window_shrink 160"
               :onhoverlost "${EWW_CMD} update vol_reveal=false; scripts/window_shrink 110"
     (box :space-evenly false
-    (button :class "label" 
+    (eventbox :class "label" 
             :onclick "scripts/volume"
+            :onrightclick "scripts/audio_menu menu"
             volume_icon)
     (revealer :transition "slideleft" 
               :reveal vol_reveal
