@@ -6,6 +6,7 @@ menu() {
 
     # Open widgets
     if [ ! -f "$LOCK_FILE" ]; then
+        get_audio_list
         eww open audio_menu
         sleep 0.5
         touch $LOCK_FILE
@@ -28,6 +29,7 @@ should_skip() {
 
 get_audio_list() {
     buf=""
+    height=0
     skip_patterns=("QuadCast" "Dock" "Built-in")
     # Read sinks and device names into arrays
     mapfile -t sinks < <(pactl list sinks | grep -E 'Name:' | cut -d: -f2 | sed 's/^ *//')
@@ -52,16 +54,25 @@ get_audio_list() {
     # Print result
     for key in "${!sink_map[@]}"; do
         class="audio-item"
+        
+        if [ $height -lt 129 ]; then
+            height=$(( $height + 26 ))
+        fi
         if [ "$selected_audio" = "$key" ]; then
             class="audio-item-enabled"
+            buf="(button :class \"$class\" :onclick \"pactl set-default-sink \\\"$key\\\"; scripts/audio_menu list\" :hexpand true 
+                (label :hexpand true :halign \"start\" :text \"${sink_map[$key]}\"))
+                $buf "
+        else
+            buf="$buf 
+            (button :class \"$class\" :onclick \"pactl set-default-sink \\\"$key\\\"; scripts/audio_menu list\" :hexpand true 
+            (label :hexpand true :halign \"start\" :text \"${sink_map[$key]}\"))"
         fi
         
-        buf="$buf 
         
-        (button :class \"$class\" :onclick \"pactl set-default-sink \\\"$key\\\"; scripts/audio_menu list\" :hexpand true 
-        (label :hexpand true :halign \"start\" :text \"${sink_map[$key]}\"))"
     done
-    eww update audio_list_content="(scroll :hexpand true :class \"audio-scroll\" :hscroll false :vscroll true :height 100 (box :class \"audio-list\" :orientation \"v\" :halign \"start\" :hexpand true :space-evenly false $buf))"
+    echo $height
+    eww update audio_list_content="(scroll :hexpand true :class \"audio-scroll\" :hscroll false :vscroll true :height $height (box :class \"audio-list\" :orientation \"v\" :halign \"start\" :hexpand true :space-evenly false $buf))"
     
 
 }

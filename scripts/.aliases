@@ -9,3 +9,7 @@ end
 function trimvideo
     ffmpeg -ss "$argv[3]" -to "$argv[4]" -i "$argv[1]" -c:v libx264 -preset fast -crf 23 -c:a pcm_s16le -ar 48000 "$argv[2]"  
 end
+
+function nfetch
+    neofetch --source ~/Documents/acsii.txt --ascii_colors 2 6 --colors 1 2 3 6 1 2
+end

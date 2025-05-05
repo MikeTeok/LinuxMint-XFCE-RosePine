@@ -172,6 +172,6 @@
 	                    :x "-0.5%"
 	                    :y "4.5%"
 						:width "100px" 
-						:height "100px"
+						:height "10px"
 						)
 (audio_menu))

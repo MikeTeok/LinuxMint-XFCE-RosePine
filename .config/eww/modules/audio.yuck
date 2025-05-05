@@ -5,13 +5,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-
-(deflisten audio_list_content "scripts/audio_menu list")
+(defvar audio_list_content "")
+;(deflisten audio_list_content "scripts/audio_menu list")
 (defwidget audio_menu []
     (box    :orientation "v"  
             :valign "start"
             :halign "center"
             :space-evenly false
             :hexpand true
-            :spacing 10
     (literal :content audio_list_content)))
