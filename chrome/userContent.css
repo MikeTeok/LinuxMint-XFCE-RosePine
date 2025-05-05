@@ -17,7 +17,9 @@
 html.private {
     --in-content-page-background: transparent !important;
 }
-
+* {
+    scrollbar-color: rgba(234, 154, 151, 0.3) transparent !important;
+}
 
 @-moz-document domain(web.whatsapp.com) {
     .dark {
@@ -53,13 +55,17 @@ html.private {
         --outgoing-background-deeper: #2a273f70 !important;
         --drawer-background-deep: transparent !important;
         --popup-panel-background: #232136d0 !important;
+        --unread-bar-background: #23213670 !important;
+        --unread-background: transparent !important;
     }
     ._ak4w {
         backdrop-filter: blur(20px) !important;
     }
 }
 
-
-
-
+@-moz-document domain(yifan.tv) {
+    .publicbox.ng-star-inserted {
+        display: none !important;
+    }
+}
 

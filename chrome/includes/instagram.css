@@ -1,9 +1,14 @@
 
 @-moz-document domain(instagram.com) {
+    :root {
+        --revamp-feed-item-spacing: 0px !important;
+        --ig-primary-background: transparent !important;
+        --ig-elevated-background: #23213640 !important;
+    }
     body, html, header, #repository-container-header, .bgColor-muted, section{
         background-color: transparent !important;
     }
-    .xvbhtw8, ._ar45, .xvbhtw8 {
+    .xvbhtw8, ._ar45, .xvbhtw8, .xnz67gz {
       background-color: transparent !important;
     }
     .xopu45v {
@@ -11,6 +16,36 @@
     }
     .x5qyhuo, .x443n21, .x1h0vfkc {
       background-color: transparent !important;
+    }
+    .xso031l {
+        border-bottom-width: 0px !important;
+    }
+    article {
+      padding: 15px 15px 0 !important;
+      background-color: #ffffff10 !important;
+      border-radius: 1rem !important;
+    }
+    .x1qjc9v5 > div > div {
+        gap: 0.5rem !important;
+    }
+    .xyb01ml {
+      border-bottom-color: transparent !important;
+    }
+    .x1yhmmig {
+      border-top-color: transparent !important;
+    }
+    .xeqyd3i {
+      border-right-color: transparent !important;
+    }
+    .xdn568n {
+      border-left-color: transparent !important;
+    }
+    .x7r02ix {
+        background-color: #232136a0 !important;
+        backdrop-filter: blur(20px) !important;
+    }
+    article:has(a[href^="https://www.facebook.com/ads/"]) {
+        display: none !important;
     }
 }
 
