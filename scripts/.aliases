@@ -13,3 +13,19 @@ end
 function nfetch
     neofetch --source ~/Documents/acsii.txt --ascii_colors 2 6 --colors 1 2 3 6 1 2
 end
+
+function setupinput
+    sed 's/^[ \t]*//;s/[ \t]*$//' $argv[1] | sed '/^$/d' | sort | uniq > temp.txt && mv temp.txt $argv[1]
+end
+
+function setupresult
+    sed -i 's/^[ \t]*//;s/[ \t]*$//' $argv[1]
+end
+
+function addB 
+    setupresult output$argv[1].txt && python3 ../PyCharmProjects/ExcelDataInjector/main.py  Workfile\ \(2\).xlsx "WWT_EP" B file$argv[1].txt output$argv[1].txt
+end
+
+function openB 
+    e file$argv[1].txt output$argv[1].txt
+end

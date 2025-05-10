@@ -1,6 +1,8 @@
 @-moz-document domain(chatgpt.com) {
-
-    .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\] {
+    .dark {
+        --bg-elevated-secondar: transparent !important;
+    }
+    .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\], .dark\:bg-\[\#303030\]:is(.dark *), .bg-token-bg-elevated-secondary  {
         background-color: transparent !important;
     }
     .bg-\[var\(--item-background-color\)\]:hover, .hover\:bg-token-sidebar-surface-secondary:hover, .hover\:bg-token-main-surface-secondary:hover, .dark\:bg-token-main-surface-secondary:is(.dark *) , .btn-secondary, .flex.items-center.cursor-pointer:hover{
@@ -20,7 +22,7 @@
         background-color: #9ccfd8 !important;
     }
     
-    .btn-secondary:hover, .enabled\:hover\:bg-token-main-surface-secondary:hover  {
+    .btn-secondary:hover, .enabled\:hover\:bg-token-main-surface-secondary:hover {
         border: 1px solid rgb(234, 154, 151) !important;
         background-color: hsla(0,0%,100%,.08) !important;
     }
@@ -35,4 +37,10 @@
             background-color:hsla(0,0%,100%,.18)  !important;
         }
     }  
+    .rounded-lg:hover {
+        background-color:hsla(0,0%,100%,.08)  !important;
+    }
+    .bg-\[var\(--sidebar-surface-tertiary\)\] {
+        background-color: #3e8fb080 !important;
+    }
 }
