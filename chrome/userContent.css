@@ -64,8 +64,16 @@ html.private {
 }
 
 @-moz-document domain(yifan.tv) {
-    .publicbox.ng-star-inserted {
+    .publicbox.ng-star-inserted{
         display: none !important;
     }
+
+}
+
+@-moz-document domain(chess.com) {
+    body.theme-background{
+        background-color: transparent !important;
+    }
+
 }
 

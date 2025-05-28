@@ -1,5 +1,6 @@
 function e
-    command gedit $argv >/dev/null 2>&1 & disown
+    #command gedit $argv >/dev/null 2>&1 & disown
+    xfce4-terminal -e "/home/miketeok/Documents/StandaloneApp/nvim-linux-x86_64/bin/nvim '$argv'"
 end
 
 function fixaudio

@@ -113,6 +113,15 @@ window#whiskermenu-window scrolledwindow.frame treeview.view:focus {
   color: #faf4ed;
 }
 
+window#whiskermenu-window scrolledwindow.frame.launchers-pane .view:hover {
+    background-color: rgba(250, 244, 237, 0.12); 
+    color: #9ccfd8;
+}
+window#whiskermenu-window scrolledwindow.frame.launchers-pane .view:selected {
+    background-color: rgba(250, 244, 237, 0.12); 
+    color: #9ccfd8;
+}
+
 /********************
        blueman
 *******************/
