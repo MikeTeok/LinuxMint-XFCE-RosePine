@@ -13,6 +13,7 @@ menu {
   border: none;
   background-color: rgba(35, 33, 54, 0);
   color: rgba(250, 244, 237, 0.7);
+  border-radius: 0.7rem;
 }
 
 .background.csd { box-shadow: none; }
@@ -148,4 +149,10 @@ background-color:  rgba(156, 207, 216, 0.5);
 *******************/
 .exoiconview.view, .exoiconview.view .view {background-color: transparent; }
 
+/*********************
+ Xfce4-Screenshooter
+*******************/
 
+window.Xfce4-screenshooter {
+    background-color: #000;
+}

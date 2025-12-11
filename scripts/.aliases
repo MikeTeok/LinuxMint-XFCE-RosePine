@@ -30,3 +30,7 @@ end
 function openB 
     e file$argv[1].txt output$argv[1].txt
 end
+
+function launchMMwebapp
+    /home/miketeok/Documents/scripts/start_MM_server.sh
+end

@@ -176,4 +176,8 @@
         background-image: url("../icons/itchio.png") !important;
         background-size: cover !important;
     }
+    .top-site-button[href*="https://notion.so"] .top-site-icon.rich-icon{
+        background-image: url("../icons/notion.png") !important;
+        background-size: cover !important;
+    }
 } 

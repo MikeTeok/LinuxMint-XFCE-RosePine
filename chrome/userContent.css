@@ -7,19 +7,24 @@
 @import "./includes/github.css";
 @import "./includes/messenger.css";
 @import "./includes/instagram.css";
-:root {
-    --background-color: rgba(35, 33, 54, 0.5);
-}
-#browser:not(.browser-toolbox-background) {
-  background-color: transparent !important;
+
+@-moz-document  {
+      /* put ALL your global tweaks here */
+    :root {
+            --background-color: rgba(35, 33, 54, 0.5);
+    }
+     #browser:not(.browser-toolbox-background) {
+        background-color: transparent !important;
+    }
+
+    html.private {
+        --in-content-page-background: transparent !important;
+    }
+    * {
+        scrollbar-color: rgba(234, 154, 151, 0.3) transparent !important;
+    }
 }
 
-html.private {
-    --in-content-page-background: transparent !important;
-}
-* {
-    scrollbar-color: rgba(234, 154, 151, 0.3) transparent !important;
-}
 
 @-moz-document domain(web.whatsapp.com) {
     .dark {
@@ -57,6 +62,11 @@ html.private {
         --popup-panel-background: #232136d0 !important;
         --unread-bar-background: #23213670 !important;
         --unread-background: transparent !important;
+        --chatlist-panel-background: transparent !important;
+    }
+    .x1h89ln0.x1h89ln0, .x1h89ln0.x1h89ln0:root {
+        --WDS-surface-default: transparent !important;
+        --WDS-surface-emphasized: #232136d0 !important;
     }
     ._ak4w {
         backdrop-filter: blur(20px) !important;
@@ -76,4 +86,5 @@ html.private {
     }
 
 }
+
 

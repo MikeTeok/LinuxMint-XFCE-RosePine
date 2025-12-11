@@ -6,21 +6,19 @@
  * @website https://github.com/EnderDragonEP/Transparent-Discord-Theme
  */
 
- @import url(https://raw.githubusercontent.com/EnderDragonEP/Transparent-Discord-Theme/main/css/source.css);
-@import url("https://benji-en.github.io/rose-pine/rose-pine-main.css");
+@import url(https://raw.githubusercontent.com/EnderDragonEP/Transparent-Discord-Theme/main/css/source.css);
+
+
+@import url("https://raw.githubusercontent.com/rose-pine/discord/refs/heads/main/rose-pine-moon.theme.css");
+
+
  :root {
-      /* Change this to whatever you like */
       --theme-base-color-amount: 12%;
 
 
-      /* Accent Color */
-      /* default: var(--os-accent-color) */
-      /* Discord default accent color: rgb(90, 101, 234) */
       --accent-color: var(--os-accent-color);
 
 
-      /* background Color */
-      /* default: rgba(0, 0, 0, 0) */
       --background-color: rgba(0, 0, 0, 0);
  }
  @supports (color: color-mix(in lch, red, blue)) and (top: var(--f)) {
@@ -63,3 +61,4 @@
     background: rgba(35, 33, 54, 0.8);
     backdrop-filter: blur(10px);
 }
+

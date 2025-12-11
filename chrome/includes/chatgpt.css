@@ -1,6 +1,11 @@
 @-moz-document domain(chatgpt.com) {
+    :root, [data-chat-theme="default"] {
+        --theme-user-msg-bg: #3e8fb080 !important;
+    }
+    
     .dark {
-        --bg-elevated-secondar: transparent !important;
+        --bg-primary: transparent !important;
+        --bg-elevated-secondary: transparent !important;
     }
     .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\], .dark\:bg-\[\#303030\]:is(.dark *), .bg-token-bg-elevated-secondary  {
         background-color: transparent !important;
