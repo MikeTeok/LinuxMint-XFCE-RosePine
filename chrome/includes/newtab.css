@@ -119,7 +119,7 @@
         background-image: url("../icons/reddit.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="http://www.github.com"] .top-site-icon.rich-icon{
+    .top-site-button[href*="http://www.github.com"] .top-site-icon.default-icon{
         background-image: url("../icons/github.png") !important;
         background-size: cover !important;
     }
@@ -139,7 +139,7 @@
         background-image: url("../icons/google.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="https://music.youtube.com/"] .top-site-icon.rich-icon{
+    .top-site-button[href*="https://music.youtube.com/"] .top-site-icon.default-icon{
         background-image: url("../icons/youtube-music.png") !important;
         background-size: cover !important;
     }
