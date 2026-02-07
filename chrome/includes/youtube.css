@@ -32,7 +32,9 @@
     #frosted-glass.with-chipbar.ytd-app {
     background: transparent !important;
     }
-
+    ytd-engagement-panel-section-list-renderer[match-content-theme] #content.ytd-engagement-panel-section-list-renderer {
+        background-color: transparent !important;
+    }
     /*
     * {
         isolation: isolate;

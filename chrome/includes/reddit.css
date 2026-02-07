@@ -41,7 +41,7 @@
     .button-plain, .button-plain-weak,  .button.bg-transparent {
         background: transparent !important;
     }
-    .bg-secondary-background, .achievement-modal-container {
+    .bg-secondary-background, .achievement-modal-container, :root.theme-dark .sidebar-grid, :root.theme-dark .grid-container.grid, :root.theme-dark .wiki-pilot-communities, :root.theme-dark #pdp-credit-bar, :root.theme-dark subreddit-header-card, :root.theme-dark .sidebar-grid .theme-beta:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .sidebar-grid .theme-rpl:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .grid-container.grid .theme-beta:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container), :root.theme-dark .grid-container.grid .theme-rpl:not(.stickied):not(#left-sidebar-container):not(.left-sidebar-container) {
         background-color: transparent !important;
     }
     .button-secondary {

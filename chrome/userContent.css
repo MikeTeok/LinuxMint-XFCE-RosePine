@@ -64,9 +64,12 @@
         --unread-background: transparent !important;
         --chatlist-panel-background: transparent !important;
     }
-    .x1h89ln0.x1h89ln0, .x1h89ln0.x1h89ln0:root {
+    .xa3rncp.xa3rncp, .xa3rncp.xa3rncp:root {
         --WDS-surface-default: transparent !important;
-        --WDS-surface-emphasized: #232136d0 !important;
+        --WDS-surface-emphasized: transparent !important;
+        --WDS-systems-chat-background-wallpaper: transparent !important;
+        --WDS-background-wash-inset:  transparent !important;
+        --WDS-systems-chat-surface-composer: #ffffff10 !important;
     }
     ._ak4w {
         backdrop-filter: blur(20px) !important;

@@ -28,14 +28,14 @@
         background-color: hsla(0,0%,100%,.08) !important;
         position: absolute !important;
     }
-    .layout-variant-b .top-site-outer .tile{
+    .top-site-outer .tile{
         transition: transform 100ms ease, border 100ms ease;
     }
-    .layout-variant-b .top-site-outer .tile:hover {
+    .top-site-outer .tile:hover {
         transform: scale(1.1);
         border: 1px solid #9ccfd8 !important;
     }
-    .layout-variant-b .top-site-outer .tile:active {
+    .top-site-outer .tile:active {
         border: 10px solid #9ccfd8 !important;
         border-radius: 2rem !important;
         outline: none !important;
@@ -49,24 +49,28 @@
     .shortcuts-refresh .top-site-outer{
           width: 170px !important;
     }
+    .top-sites-list {
+        column-gap: 1.5rem;
+
+    }
     .top-sites-list .top-site-outer .title .title-label {
         margin-top: 100px !important;
         padding-top: 45px !important;
     }
-    .icon.icon-pin-small, .logo-and-wordmark .wordmark, .layout-variant-a .search-wrapper .search-inner-wrapper, .layout-variant-b .search-wrapper .search-inner-wrapper {
+    .icon.icon-pin-small, .logo-and-wordmark .wordmark, .search-inner-wrapper, .search-wrapper .search-inner-wrapper {
         display: none !important;
     }
     .context-menu-button.icon {
-        padding-left: 4rem !important;
+        padding-left: 1rem !important;
         padding-top: 2rem !important;
     }
-    .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+    .top-sites-list, .top-sites-list {
         row-gap: 0px !important;
     }
     .logo-and-wordmark .logo {
         display: none !important;
     }
-    .layout-variant-a.no-recommended-stories .logo-and-wordmark, .layout-variant-b.no-recommended-stories .logo-and-wordmark {
+    .no-recommended-stories .logo-and-wordmark, .no-recommended-stories .logo-and-wordmark {
         margin-block-end: 0px !important;
         --size-item-large: 64px !important;
     }
@@ -75,36 +79,36 @@
         align-items: center !important;
     }
 
-    .layout-variant-a .ds-outer-wrapper-breakpoint-override main .body-wrapper, .layout-variant-b .ds-outer-wrapper-breakpoint-override main .body-wrapper {
+    .ds-outer-wrapper-breakpoint-override main .body-wrapper, .ds-outer-wrapper-breakpoint-override main .body-wrapper {
         width: auto !important;
     }
     @media (min-width: 600px) {
-        .layout-variant-b .top-sites-list {
+        .top-sites-list {
             grid-template-columns: repeat(3, 1fr) !important;
         }
     }
     @media (min-width: 800px) {
-        .layout-variant-b .top-sites-list {
+        .top-sites-list {
             grid-template-columns: repeat(4, 1fr) !important;
         }
     }
     @media (min-width: 1120px) {
-        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+        .top-sites-list {
             grid-template-columns: repeat(5, 1fr) !important;;
         }
     }
     @media (min-width: 1330px) {
-        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+        .top-sites-list {
             grid-template-columns: repeat(6, 1fr) !important;;
         }
     }
     @media (min-width: 1440px) {
-        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+        .top-sites-list{
             grid-template-columns: repeat(7, 1fr) !important;;
         }
     }
     @media (min-width: 1580px) {
-        .layout-variant-a .top-sites-list, .layout-variant-b .top-sites-list {
+        .top-sites-list {
             grid-template-columns: repeat(8, 1fr) !important;;
         }
     }
@@ -155,7 +159,7 @@
         background-image: url("../icons/yifan.png") !important;
         background-size: cover !important;
     }
-    .top-site-button .top-site-icon.rich-icon, .top-site-button .top-site-icon.default-icon, .shortcuts-refresh .top-site-outer .tile .icon-wrapper{
+    .top-site-button .top-site-icon.rich-icon, .top-site-button .top-site-icon.default-icon, .top-site-outer .tile .icon-wrapper{
         /*background-size: 64px !important;*/
         height: 64px !important;
         width: 64px !important;
