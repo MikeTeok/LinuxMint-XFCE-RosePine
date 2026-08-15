@@ -1,14 +1,19 @@
 #!/bin/bash
 
 symbol() {
+
+    if grep -ql "^up$" /sys/class/net/e*/operstate; then
+        echo "󱒃" && exit
+    fi
+
     status=$(cat /sys/class/net/w*/operstate)
-    
+
     if [ $status = "down" ]; then
         echo "󰤮" && exit
     fi
-    
+
     signal=$(nmcli -t -f IN-USE,SIGNAL device wifi list | grep "^\*" | cut -d':' -f2)
-    
+
     if [ $signal -le 30 ]; then
         echo "󰤟" && exit
     elif [ "$signal" -le 59 ]; then
@@ -24,7 +29,7 @@ symbol() {
 
 name() {
     wifi=$(iwgetid -r)
-    
+
     echo "$wifi"
 }
 

@@ -2,12 +2,16 @@
     :root, [data-chat-theme="default"] {
         --theme-user-msg-bg: #3e8fb080 !important;
     }
+
+    html.dark, html.dark :not(:where(.light, .light *)) {
+        --main-surface-primary: transparent !important;
+    }
     
     .dark {
         --bg-primary: transparent !important;
         --bg-elevated-secondary: transparent !important;
     }
-    .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\], .dark\:bg-\[\#303030\]:is(.dark *), .bg-token-bg-elevated-secondary  {
+    .bg-token-sidebar-surface-primary, html:not(.screen-arch), html:not(.screen-arch) body, .bg-token-main-surface-primary, .bg-\[var\(--item-background-color\)\], .dark\:bg-\[\#303030\]:is(.dark *), .bg-token-bg-elevated-secondary , .bg-\(--sidebar-surface-primary\), .dark-oled\:bg-token-bg-secondary-surface:where(.dark[data-oled], .dark[data-oled] *):not(:where(.dark[data-oled] .light, .dark[data-oled] .light *)), .content-fade::after {
         background-color: transparent !important;
     }
     .bg-\[var\(--item-background-color\)\]:hover, .hover\:bg-token-sidebar-surface-secondary:hover, .hover\:bg-token-main-surface-secondary:hover, .dark\:bg-token-main-surface-secondary:is(.dark *) , .btn-secondary, .flex.items-center.cursor-pointer:hover{

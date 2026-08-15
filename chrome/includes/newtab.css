@@ -5,8 +5,9 @@
     }
     html{ 
         --newtab-background-color: transparent !important; 
-        --newtab-background-color-secondary: transparent !important; 
+        --newtab-background-color-secondary: transparent !important;
     } 
+
     .search-wrapper .search-handoff-button {
         background-color: hsla(0,0%,100%,.08) !important;
         border-radius: 0.9rem !important;
@@ -19,23 +20,33 @@
         background-color: rgba(35, 33, 54, 0.7) !important;
         backdrop-filter: blur(20px) !important; 
     }
+    .nova-enabled .top-site-outer {
+        width: calc(var(--size-item-large) * 2) !important;
+        height: calc(var(--size-item-large) * 2) !important;
+        position: relative !important;
+
+    }/*
     .top-site-outer:hover {
         background-color: transparent !important;
-    }
+    }*/
     .top-site-outer .tile {
         border-radius: 1rem !important;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15) !important;
         background-color: hsla(0,0%,100%,.08) !important;
-        position: absolute !important;
+        position: relative;
     }
-    .top-site-outer .tile{
-        transition: transform 100ms ease, border 100ms ease;
+    .nova-enabled .top-site-outer .tile{
+        transition: transform 100ms ease, border 100ms ease !important;
     }
-    .top-site-outer .tile:hover {
-        transform: scale(1.1);
+    .nova-enabled .top-site-outer:is(:hover, :focus-within, .active) .tile {
+        width: calc(var(--size-item-large) * 2) !important;
+        height: calc(var(--size-item-large) * 2) !important;
+        transform: scale(1.1) !important;
         border: 1px solid #9ccfd8 !important;
     }
-    .top-site-outer .tile:active {
+    .nova-enabled .top-site-outer:active .tile {
+        width: calc(var(--size-item-large) * 2) !important;
+        height: calc(var(--size-item-large) * 2) !important;
         border: 10px solid #9ccfd8 !important;
         border-radius: 2rem !important;
         outline: none !important;
@@ -54,18 +65,16 @@
 
     }
     .top-sites-list .top-site-outer .title .title-label {
-        margin-top: 100px !important;
-        padding-top: 45px !important;
+        display: inline !important;
+        margin-top: 0px !important;
+        padding-top: 0px !important;
     }
-    .icon.icon-pin-small, .logo-and-wordmark .wordmark, .search-inner-wrapper, .search-wrapper .search-inner-wrapper {
+    .icon.icon-pin-small, .logo-and-wordmark .wordmark, .search-inner-wrapper, .search-wrapper .search-inner-wrapper, .nova-enabled .widgets-wrapper {
         display: none !important;
     }
-    .context-menu-button.icon {
-        padding-left: 1rem !important;
-        padding-top: 2rem !important;
-    }
+
     .top-sites-list, .top-sites-list {
-        row-gap: 0px !important;
+        row-gap: 6rem !important;
     }
     .logo-and-wordmark .logo {
         display: none !important;
@@ -113,6 +122,8 @@
         }
     }
     .top-site-outer .context-menu-button {
+        top: 4px !important;
+        right: 4px !important;
         background-color: transparent !important;
     }
     .top-site-button[href*="http://www.youtube.com"] .top-site-icon.rich-icon{
@@ -135,15 +146,15 @@
         background-image: url("../icons/facebook.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="https://www.messenger.com/"] .top-site-icon.rich-icon{
-        background-image: url("../icons/messenger.png") !important;
+    .top-site-button[href*="https://claude.ai/"] .top-site-icon.rich-icon000{
+        background-image: url("../icons/claude.png") !important;
         background-size: cover !important;
     }
     .top-site-button[href*="https://www.google.com"] .top-site-icon.rich-icon{
         background-image: url("../icons/google.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="https://music.youtube.com/"] .top-site-icon.default-icon{
+    .top-site-button[href*="https://music.youtube.com/"] .top-site-icon.rich-icon{
         background-image: url("../icons/youtube-music.png") !important;
         background-size: cover !important;
     }
@@ -155,7 +166,7 @@
         background-image: url("../icons/chatgpt.png") !important;
         background-size: cover !important;
     }
-    .top-site-button[href*="https://www.yifan.tv/"] .top-site-icon.rich-icon{
+    .top-site-button[href*="https://www.yifan.tv/"] .top-site-icon.rich-icon000{
         background-image: url("../icons/yifan.png") !important;
         background-size: cover !important;
     }
@@ -184,4 +195,11 @@
         background-image: url("../icons/notion.png") !important;
         background-size: cover !important;
     }
+
+main.content {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    min-height: 80vh !important;
+}
 } 

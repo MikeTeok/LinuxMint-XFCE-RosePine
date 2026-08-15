@@ -1,0 +1,21 @@
+@-moz-document domain(claude.ai) {
+    .bg-bg-100, .bg-bg-000 {
+        background-color: transparent !important;
+    }
+    .bg-bg-200 {
+        background-color: hsla(0,0%,100%,.08) !important;
+    }
+    .rounded-b-xl {
+        border-top-left-radius: .75rem !important;
+        border-top-right-radius: .75rem !important;
+    }
+    .from-bg-100 {
+        --tw-gradient-from: none !important;
+    }
+    .to-bg-100\/0 {
+        --tw-gradient-to: none important;
+    }
+    .bg-bg-300 {
+        background-color: #ea9a9740 !important;
+    }
+}

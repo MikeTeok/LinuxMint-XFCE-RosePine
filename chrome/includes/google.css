@@ -1,6 +1,6 @@
 
 @-moz-document domain(google.com), domain(accounts.google.com), domain(mail.google.com), domain(drive.google.com) {
-    .sfbg, .minidiv .sfbg {
+    .sfbg, .minidiv .sfbg, .DZ13He, .qEn1od, .Zze5V {
         background-color: transparent !important;
         background: transparent !important;
         backdrop-filter: blur(20px);        
@@ -28,7 +28,7 @@
     .RNNXgb:hover, .sbhl {
         background-color: hsla(0,0%,100%,.08) !important;
     }
-    .aajZCb, .WNN1b{
+    .aajZCb, .WNN1b, .VHFyob .CvDJxb{
         background: rgba(35, 33, 54, 0.7) !important;
         backdrop-filter: blur(20px) !important; 
         box-shadow: 0 0px 0px 0 #171717 !important;

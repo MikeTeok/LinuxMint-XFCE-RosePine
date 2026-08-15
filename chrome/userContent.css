@@ -7,6 +7,7 @@
 @import "./includes/github.css";
 @import "./includes/messenger.css";
 @import "./includes/instagram.css";
+@import "./includes/claude.css";
 
 @-moz-document  {
       /* put ALL your global tweaks here */
@@ -52,6 +53,7 @@
         --filters-item-background-hover: #6e6a8630 !important;
         --incoming-background: #2a273fa0 !important;
         --incoming-background-rgb: #2a273fa0 !important;
+        
         --outgoing-background: #3e8fb070 !important;
         --outgoing-background-rgb: #3e8fb070 !important;
         --dropdown-background: #232136d0 !important;
@@ -64,7 +66,16 @@
         --unread-background: transparent !important;
         --chatlist-panel-background: transparent !important;
     }
-    .xa3rncp.xa3rncp, .xa3rncp.xa3rncp:root {
+    .color-refresh, .color-refresh.dark {
+        --system-message-background: #ffffff10 !important;
+    }
+    .x28tbhy.x28tbhy, .x28tbhy.x28tbhy:root {
+        --WDS-systems-bubble-surface-incoming: #2a273fa0 !important;
+        --WDS-systems-bubble-surface-outgoing: #3e8fb070 !important;
+        --WDS-systems-bubble-surface-system: #ffffff10 !important;
+        --WDS-systems-bubble-surface-overlay: #ffffff10 !important;
+    }
+    .xa3rncp.xa3rncp, .xa3rncp.xa3rncp:root, .x1h3rtpe {
         --WDS-surface-default: transparent !important;
         --WDS-surface-emphasized: transparent !important;
         --WDS-systems-chat-background-wallpaper: transparent !important;
